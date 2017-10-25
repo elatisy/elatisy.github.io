@@ -1,4 +1,41 @@
-<!-- Archive Header -->
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Elatis">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="陈恒源的博客"/>
+  <meta property="og:description" content="我只能说,难" />
+  <meta property="og:site_name" content="陈恒源的博客"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="陈恒源的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="[object Object]">
+  
+
+  <!-- Site Title -->
+  <title>陈恒源的博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Archive Header -->
 <!-- Page Header -->
 
 
@@ -25,6 +62,14 @@
                 <a href="/archives">
                   
                   Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  
+                  categories
                   
                 </a>
               </li>
@@ -80,4 +125,38 @@
     </div>
   </div>
 </div>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+
+  </body>
+</html>
 
