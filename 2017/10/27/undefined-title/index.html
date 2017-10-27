@@ -102,6 +102,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Ela's notes" type="application/atom+xml" />
+
 
 
 
@@ -114,7 +116,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <meta property="og:site_name" content="Ela&#39;s notes">
 <meta property="og:description" content="经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.当然我也有一些想要弄的却没弄出来的操作,待">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-27T10:12:14.439Z">
+<meta property="og:updated_time" content="2017-10-27T13:45:13.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[填坑中]基于next主题的各种配置方法">
 <meta name="twitter:description" content="经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.当然我也有一些想要弄的却没弄出来的操作,待">
@@ -325,7 +327,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-27T18:12:14+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-27T21:45:13+08:00">
                 2017-10-27
               </time>
             
@@ -375,7 +377,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,102
+                  1,056
                 </span>
               
 
@@ -427,8 +429,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <p>将你想要的动态背景设为<strong>true</strong>即可.<br>网上的方法有一个好,就是可以设置动态背景的详细数据.尝试过直接更改对应的.js文件(似乎是用java编码的?)但失败了.<br>但我只找到nest风格的动态背景的设置.<br>附上我找到的一篇文章:<a href="http://www.jianshu.com/p/ea3990fe76f6" target="_blank" rel="external">http://www.jianshu.com/p/ea3990fe76f6</a><br><em>注意:</em>由于新版的next主题的配置文件中已有动态背景的相关设置,故不用更改_config.yml</p>
 <h2 id="博客文件夹下的-config-yml的设置"><a href="#博客文件夹下的-config-yml的设置" class="headerlink" title="博客文件夹下的_config.yml的设置"></a>博客文件夹下的_config.yml的设置</h2><h3 id="标题栏的设置"><a href="#标题栏的设置" class="headerlink" title="标题栏的设置"></a>标题栏的设置</h3><p>在_config.yml中找到:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Site</span></div><div class="line"><span class="attr">title:</span> </div><div class="line"><span class="attr">subtitle:</span> </div><div class="line"><span class="attr">description:</span> </div><div class="line"><span class="attr">author:</span> </div><div class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></div><div class="line"><span class="attr">timezone:</span></div></pre></td></tr></table></figure></p>
 <p>将各项设置改成你想要的即可.其中language一项是改成简体中文,如果不填默认英文.<br><strong>特别提醒</strong>文章的.md文件用记事本编辑的话记得将其保存为UTF-8编码,否则中文会乱码.</p>
-<h3 id="url的设置"><a href="#url的设置" class="headerlink" title="url的设置"></a>url的设置</h3><p>在_config.yml中找到:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># URL</span></div><div class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></div><div class="line"><span class="attr">url:</span> <span class="attr">https://yourname.github.io/</span></div><div class="line"><span class="attr">root:</span> <span class="string">yourname.github.io/</span></div><div class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:english-title/</span></div><div class="line"><span class="attr">permalink_defaults:</span></div></pre></td></tr></table></figure></p>
-<p>将所有项改成上面那样即可,yourname是你的GitHub用户名.<br>(并不是很明白url的具体用处…)</p>
+<p><strong>主要在_config.yml中进行的更改就讲解到这里,但是接下来的部分设置也会用到它</strong></p>
 
       
     </div>
@@ -538,7 +539,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Elatis</p>
-              <p class="site-description motion-element" itemprop="description">我只能说,难</p>
+              <p class="site-description motion-element" itemprop="description">博客真好玩,我要氪金</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -578,6 +579,13 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           <div class="links-of-author motion-element">
@@ -631,7 +639,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备工作"><span class="nav-number">1.</span> <span class="nav-text">前期准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客的搭建"><span class="nav-number">1.1.</span> <span class="nav-text">博客的搭建</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博客-主题下的-config-yml的各种设置"><span class="nav-number">2.</span> <span class="nav-text">博客/主题下的_config.yml的各种设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器的选择"><span class="nav-number">2.1.</span> <span class="nav-text">编辑器的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#themes-next下的-config-yml的设置"><span class="nav-number">2.2.</span> <span class="nav-text">themes\next下的_config.yml的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换主题方案-Scheme"><span class="nav-number">2.2.1.</span> <span class="nav-text">切换主题方案(Scheme)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客图标的设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">博客图标的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧栏中超链接的设置"><span class="nav-number">2.2.3.</span> <span class="nav-text">侧栏中超链接的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态背景的设置"><span class="nav-number">2.2.4.</span> <span class="nav-text">动态背景的设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客文件夹下的-config-yml的设置"><span class="nav-number">2.3.</span> <span class="nav-text">博客文件夹下的_config.yml的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题栏的设置"><span class="nav-number">2.3.1.</span> <span class="nav-text">标题栏的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url的设置"><span class="nav-number">2.3.2.</span> <span class="nav-text">url的设置</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前期准备工作"><span class="nav-number">1.</span> <span class="nav-text">前期准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客的搭建"><span class="nav-number">1.1.</span> <span class="nav-text">博客的搭建</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博客-主题下的-config-yml的各种设置"><span class="nav-number">2.</span> <span class="nav-text">博客/主题下的_config.yml的各种设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器的选择"><span class="nav-number">2.1.</span> <span class="nav-text">编辑器的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#themes-next下的-config-yml的设置"><span class="nav-number">2.2.</span> <span class="nav-text">themes\next下的_config.yml的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换主题方案-Scheme"><span class="nav-number">2.2.1.</span> <span class="nav-text">切换主题方案(Scheme)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客图标的设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">博客图标的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧栏中超链接的设置"><span class="nav-number">2.2.3.</span> <span class="nav-text">侧栏中超链接的设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态背景的设置"><span class="nav-number">2.2.4.</span> <span class="nav-text">动态背景的设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博客文件夹下的-config-yml的设置"><span class="nav-number">2.3.</span> <span class="nav-text">博客文件夹下的_config.yml的设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标题栏的设置"><span class="nav-number">2.3.1.</span> <span class="nav-text">标题栏的设置</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
