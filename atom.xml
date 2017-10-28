@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-28T12:25:07.232Z</updated>
+  <updated>2017-10-28T12:34:44.112Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>markdown的使用方法</title>
+    <link href="http://yoursite.com/2017/10/28/undefined-title/"/>
+    <id>http://yoursite.com/2017/10/28/undefined-title/</id>
+    <published>2017-10-28T12:25:43.000Z</published>
+    <updated>2017-10-28T12:34:44.112Z</updated>
+    
+    <content type="html"><![CDATA[<p>开坑待编辑..</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;开坑待编辑..&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://yoursite.com/categories/markdown/"/>
+    
+    
+      <category term="伪代码" scheme="http://yoursite.com/tags/%E4%BC%AA%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>[填坑中]基于next主题的各种配置方法</title>
