@@ -114,7 +114,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <meta property="og:site_name" content="Ela&#39;s notes">
 <meta property="og:description" content="经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.当然我也有一些想要弄的却没弄出来的操作,待">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-27T15:44:58.613Z">
+<meta property="og:updated_time" content="2017-10-28T01:46:22.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[填坑中]基于next主题的各种配置方法">
 <meta name="twitter:description" content="经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.当然我也有一些想要弄的却没弄出来的操作,待">
@@ -325,8 +325,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-27T23:44:58+08:00">
-                2017-10-27
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-28T09:46:22+08:00">
+                2017-10-28
               </time>
             
           </span>
@@ -375,7 +375,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,782
+                  1,789
                 </span>
               
 
@@ -420,7 +420,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <h1 id="博客-主题下的-config-yml的各种设置"><a href="#博客-主题下的-config-yml的各种设置" class="headerlink" title="博客/主题下的_config.yml的各种设置"></a>博客/主题下的_config.yml的各种设置</h1><p>这里讲的是主要在_config.yml中进行的设置,并不代表之后的设置不需要用到_config.yml<br><em>还是建议先备份</em></p>
 <h2 id="编辑器的选择"><a href="#编辑器的选择" class="headerlink" title="编辑器的选择"></a>编辑器的选择</h2><p>要对yml进行编辑,首先当然要选择一个编辑器.直接用记事本没有高亮,看着非常难受.<br>我本人使用的是VS Code,当然只要是支持yaml的都可以.</p>
 <h2 id="themes-next下的-config-yml的设置"><a href="#themes-next下的-config-yml的设置" class="headerlink" title="themes\next下的_config.yml的设置"></a>themes\next下的_config.yml的设置</h2><h3 id="切换主题方案-Scheme"><a href="#切换主题方案-Scheme" class="headerlink" title="切换主题方案(Scheme)"></a>切换主题方案(Scheme)</h3><p>在主题下的_config.yml文件中找到(可使用编辑器的搜索功能)<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"><span class="comment"># Scheme Settings</span></div><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"></div><div class="line"><span class="comment"># Schemes</span></div><div class="line"><span class="comment">#scheme: Muse</span></div><div class="line"><span class="comment">#scheme: Mist</span></div><div class="line"><span class="comment">#scheme: Pisces</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></div></pre></td></tr></table></figure></p>
-<p>将上面四种风格的方案的某一个之前的#号去掉即可启用该风格的方案.<br>我是用的是Gemini,是可塑性较强的一种风格.</p>
+<p>将上面四种风格的方案的某一个之前的#号去掉即可启用该风格的方案.<br>我用的Gemini,是可塑性较强的一种风格.</p>
 <h3 id="博客图标的设置"><a href="#博客图标的设置" class="headerlink" title="博客图标的设置"></a>博客图标的设置</h3><p>在主题下的_config.yml文件中找到<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">favicon:</span></div><div class="line"><span class="attr">  small:</span> <span class="string">/images/favicon-16x16-next.png</span></div><div class="line"><span class="attr">  medium:</span> <span class="string">/images/favicon-32x32-next.png</span></div><div class="line"><span class="attr">  apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></div><div class="line"><span class="attr">  safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></div><div class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></div><div class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></div></pre></td></tr></table></figure></p>
 <p>将themes\next\source\images下的对应名字的图片替换即可.注意文件类型要相同(我用教程上的方法不行QAQ)</p>
 <h3 id="侧栏中超链接的设置"><a href="#侧栏中超链接的设置" class="headerlink" title="侧栏中超链接的设置"></a>侧栏中超链接的设置</h3><p>在主题下的_config.yml文件中找到<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Blog rolls</span></div><div class="line"><span class="attr">links_icon:</span> <span class="string">link</span></div><div class="line"><span class="attr">links_title:</span> <span class="string">Links</span></div><div class="line"><span class="comment">#links_layout: block</span></div><div class="line"><span class="comment">#links_layout: inline</span></div><div class="line"><span class="attr">links:</span></div></pre></td></tr></table></figure></p>
@@ -443,7 +443,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <p>通过修改<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">margin-top: 60px;</div><div class="line">margin-bottom: 60px;</div><div class="line">padding: 25px;</div></pre></td></tr></table></figure></p>
 <p>可以调整阴影效果和文章界面的大小</p>
 <h3 id="调整文章背景的不透明度"><a href="#调整文章背景的不透明度" class="headerlink" title="调整文章背景的不透明度"></a>调整文章背景的不透明度</h3><p>在刚才加的代码的大括号里再加入:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opacity: 0.5;</div></pre></td></tr></table></figure></p>
-<p>可以手动调整文章背景的不透明度,不加这句默认为1,范围为0~1.<br>目前仅在Gemini主题方案测试成功.<br>(为了调这个我翻了无数篇文章都没找到..后来自己试出来了..)</p>
+<p>可以手动调整文章背景的不透明度,不加这句默认为1,范围为0~1.<br>目前仅在Gemini主题方案测试成功.<br>(为了调这个我查了无数资料都没找到..百度都要被我翻光了QAQ后来自己试出来了..)</p>
 
       
     </div>
@@ -606,6 +606,12 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <a href="https://github.com/elatisy" target="_blank" title="GitHub">
                     
                       <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:344750681@qq.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
             
