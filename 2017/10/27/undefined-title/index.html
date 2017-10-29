@@ -114,7 +114,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <meta property="og:site_name" content="Ela&#39;s notes">
 <meta property="og:description" content="经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.当然我也有一些想要弄的却没弄出来的操作,待">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-28T12:54:43.328Z">
+<meta property="og:updated_time" content="2017-10-29T13:48:40.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[填坑中]基于next主题的各种配置方法">
 <meta name="twitter:description" content="经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.当然我也有一些想要弄的却没弄出来的操作,待">
@@ -325,8 +325,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-28T20:54:43+08:00">
-                2017-10-28
+              <time title="更新于" itemprop="dateModified" datetime="2017-10-29T21:48:40+08:00">
+                2017-10-29
               </time>
             
           </span>
@@ -418,7 +418,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <p>开启本地预览来看看你的改动是否和你心意,改好后再上传<br>3.<strong>特别提醒</strong>文章的.md文件用记事本编辑的话记得将其保存为UTF-8编码,否则中文会变成乱码,即使你的博客界面为中文.</p>
 <h1 id="前期准备工作"><a href="#前期准备工作" class="headerlink" title="前期准备工作"></a>前期准备工作</h1><h2 id="博客的搭建"><a href="#博客的搭建" class="headerlink" title="博客的搭建"></a>博客的搭建</h2><p>本篇介绍的是博客的美化,关于如何去搭建博客,可以参考一下<a href="https://rivercome.github.io/" target="_blank" rel="external">学长的教程</a><br>当然也可以来询问我<br>有一点要补充的是:<strong>GitHub账号名最好用小写英文</strong>,我的第一个GitHub账号有大写字母,导致了一些奇奇怪怪的bug..<br>还有一点就是:<strong>定期备份</strong>,免得误操作导致博客崩了,却无法恢复.</p>
 <h1 id="博客-主题下的-config-yml的各种设置"><a href="#博客-主题下的-config-yml的各种设置" class="headerlink" title="博客/主题下的_config.yml的各种设置"></a>博客/主题下的_config.yml的各种设置</h1><p>这里讲的是主要在_config.yml中进行的设置,并不代表之后的设置不需要用到_config.yml</p>
-<center><strong>还是建议先备份</strong></center>
+<font size="5"><center><strong>还是建议先备份</strong></center></font>
 
 <h2 id="编辑器的选择"><a href="#编辑器的选择" class="headerlink" title="编辑器的选择"></a>编辑器的选择</h2><p>要对yml进行编辑,首先当然要选择一个编辑器.直接用记事本没有高亮,看着非常难受.<br>我本人使用的是VS Code,当然只要是支持yaml的都可以.</p>
 <h2 id="themes-next下的-config-yml的设置"><a href="#themes-next下的-config-yml的设置" class="headerlink" title="themes\next下的_config.yml的设置"></a>themes\next下的_config.yml的设置</h2><h3 id="切换主题方案-Scheme"><a href="#切换主题方案-Scheme" class="headerlink" title="切换主题方案(Scheme)"></a>切换主题方案(Scheme)</h3><p>在主题下的_config.yml文件中找到(可使用编辑器的搜索功能)<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"><span class="comment"># Scheme Settings</span></div><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"></div><div class="line"><span class="comment"># Schemes</span></div><div class="line"><span class="comment">#scheme: Muse</span></div><div class="line"><span class="comment">#scheme: Mist</span></div><div class="line"><span class="comment">#scheme: Pisces</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></div></pre></td></tr></table></figure></p>
@@ -433,7 +433,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <h2 id="博客文件夹下的-config-yml的设置"><a href="#博客文件夹下的-config-yml的设置" class="headerlink" title="博客文件夹下的_config.yml的设置"></a>博客文件夹下的_config.yml的设置</h2><h3 id="标题栏的设置"><a href="#标题栏的设置" class="headerlink" title="标题栏的设置"></a>标题栏的设置</h3><p>在_config.yml中找到:<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Site</span></div><div class="line"><span class="attr">title:</span> </div><div class="line"><span class="attr">subtitle:</span> </div><div class="line"><span class="attr">description:</span> </div><div class="line"><span class="attr">author:</span> </div><div class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></div><div class="line"><span class="attr">timezone:</span></div></pre></td></tr></table></figure></p>
 <p>将各项设置改成你想要的即可.其中language一项是改成简体中文,如果不填默认英文.</p>
 <p><strong>主要在_config.yml中进行的更改就讲解到这里,但是接下来的部分设置也会用到它</strong></p>
-<h1 id="对博客主页和文章的设置"><a href="#对博客主页和文章的设置" class="headerlink" title="对博客主页和文章的设置"></a>对博客主页和文章的设置</h1><center><strong>同样建议先备份</strong></center>
+<h1 id="对博客主页和文章的设置"><a href="#对博客主页和文章的设置" class="headerlink" title="对博客主页和文章的设置"></a>对博客主页和文章的设置</h1><font size="5"><center><strong>同样建议先备份</strong></center></font>
 
 <h2 id="背景图片的设置"><a href="#背景图片的设置" class="headerlink" title="背景图片的设置"></a>背景图片的设置</h2><p>一张好的背景图片可以大大美化整个博客,而且这是一个比较简单的操作,第一步我们就先给博客设置一张背景图片吧.<br>首先挑选一张你想要的图片,将它放入/themes/next/source/images<br>并改名为background.jpg(方便操作,后缀名不能直接改要进行转化,具体百度XXX转jpg)<br>用笔记本/其它编译器打开themes/next/source/css/_custom/custom.styl,<br>在最后加入如下代码:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">body &#123; background:url(/images/background.jpg);&#125;</div></pre></td></tr></table></figure></p>
 <p>别忘了选择UTF-8编码保存.<br>(PS:背景图加载真的慢,我一张2.7m的受兔都要加载好一会)</p>
@@ -591,7 +591,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
