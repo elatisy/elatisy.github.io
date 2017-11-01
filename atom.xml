@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-31T15:54:39.400Z</updated>
+  <updated>2017-11-01T01:06:54.187Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java的环境配置</title>
+    <link href="http://yoursite.com/2017/11/01/undefined-title/"/>
+    <id>http://yoursite.com/2017/11/01/undefined-title/</id>
+    <published>2017-11-01T00:22:31.000Z</published>
+    <updated>2017-11-01T01:06:54.187Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近准备开始学习Java,而Java的环境似乎需要手动搭建,所以在此写一篇博文介绍一下Java的环境搭建<br><a id="more"></a></p><h1 id="开发环境的搭建"><a href="#开发环境的搭建" class="headerlink" title="开发环境的搭建"></a>开发环境的搭建</h1><h2 id="JDK的下载"><a href="#JDK的下载" class="headerlink" title="JDK的下载"></a>JDK的下载</h2><p>JDK即Java Development Kit,它对于系统能编译和执行Java程序是必备的.<br>首先打开<a href="http://www.oracle.com/index.html" target="_blank" rel="external">Oracle公司的官网</a>,可以看到如下界面<br><img src="/2017/11/01/undefined-title/oracle主页.png" alt="oracle主页.png" title=""><br>将鼠标移动到左上角的Menu,再移动到Database and Technologies,再移动到Java,最后单击选择Java SE,如下<br><img src="/2017/11/01/undefined-title/找到JavaSE.png" alt="找到JavaSE.png" title=""><br>在新出现的界面下拉,找到并单击这个按钮<br><img src="/2017/11/01/undefined-title/单击按钮.png" alt="单击按钮.png" title=""><br>然后点击这个按钮<br><img src="/2017/11/01/undefined-title/下载JDK.png" alt="下载JDK.png" title=""><br>勾选这个按钮,然后选择适合自己系统的版本下载<br><img src="/2017/11/01/undefined-title/接受协议.png" alt="接受协议.png" title=""></p><h2 id="JDK的安装"><a href="#JDK的安装" class="headerlink" title="JDK的安装"></a>JDK的安装</h2><p>一直点击下一步即可,<strong>但要记住JDK的安装位置</strong>,因为待会需要使用.<br>不推荐更改它的默认安装路径</p><h2 id="JDK的配置"><a href="#JDK的配置" class="headerlink" title="JDK的配置"></a>JDK的配置</h2><p>以Windows系统为例,JDK的配置步骤如下:</p><p>首先在此电脑/计算机的图标上点击右键,选择属性,在弹出的窗口左端点击<strong>高级系统设置</strong>超链接<br>在打开的<strong>系统属性</strong>对话框中选择<strong>高级</strong>选项,单击<strong>环境变量</strong>按钮.<br><img src="/2017/11/01/undefined-title/javahome配置1.png" alt="javahome配置1.png" title=""><br>然后单击<strong>新建</strong>,在弹出的对话框中变量名输入<strong>JAVA_HOME</strong>,变量值中输入你的JDK安装的<strong>完整路径</strong>,如下<br><img src="/2017/11/01/undefined-title/javahome配置2.png" alt="javahome配置2.png" title=""><br>输入好后单击确定即可.<br>接着找到<strong>系统变量</strong>中的<strong>Path</strong>变量,双击它,将最前面的C:\ProgramData\Oracle\Java\javapath;改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</div></pre></td></tr></table></figure></p><p>完成后单击确定.</p><img src="/2017/11/01/undefined-title/Path的配置.png" alt="Path的配置.png" title=""><p>然后再单击新建按钮,新建一个名为CLASSPATH的变量,变量值为:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;</div></pre></td></tr></table></figure><p>完成后单击确定<br><img src="/2017/11/01/undefined-title/classpath的配置.png" alt="classpath的配置.png" title=""><br>然后再单击<strong>环境变量</strong>窗口下方的确定.<br>最后再测试一下,打开命令行,输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javac</div></pre></td></tr></table></figure></p><p>然后回车<br><img src="/2017/11/01/undefined-title/环境配置测试.png" alt="环境配置测试.png" title=""><br>如果出现如上图所示效果,表示环境配置成功<br>如果出现”javac不是可用的命令,也不是可执行的程序”之类的,就再回环境变量中去检查是否已按要求修改.<br><strong>注意:</strong>不要漏掉分号”;”,在Linux系统下需要把分号换成”:”</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近准备开始学习Java,而Java的环境似乎需要手动搭建,所以在此写一篇博文介绍一下Java的环境搭建&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="环境配置" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>第⑨周作业题解</title>
