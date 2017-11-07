@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+
+<script type="text/javascript"
+color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<script type="text/javascript"
+color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-lines.js/1.0.0/canvas-lines.min.js"></script>
+
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="题解," />
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本以为这周训练是最短路,没想到还是搜索,总之写一下题解吧,持续更新.关于dfs和bfs我已经在我的上一篇博文讲过了,有不懂的忘记的可以去看看,这是传送门">
+<meta name="keywords" content="题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搜索专题[2]解析">
+<meta property="og:url" content="http://elatisy.top/2017/11/07/undefined-title/index.html">
+<meta property="og:site_name" content="Ela&#39;s notes">
+<meta property="og:description" content="本以为这周训练是最短路,没想到还是搜索,总之写一下题解吧,持续更新.关于dfs和bfs我已经在我的上一篇博文讲过了,有不懂的忘记的可以去看看,这是传送门">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-07T10:05:26.842Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搜索专题[2]解析">
+<meta name="twitter:description" content="本以为这周训练是最短路,没想到还是搜索,总之写一下题解吧,持续更新.关于dfs和bfs我已经在我的上一篇博文讲过了,有不懂的忘记的可以去看看,这是传送门">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://elatisy.top/2017/11/07/undefined-title/"/>
+
+
+
+
+
+  <title>搜索专题[2]解析 | Ela's notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/elatisy/elatisy.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ela's notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://elatisy.top/2017/11/07/undefined-title/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elatis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ela's notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">搜索专题[2]解析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T17:26:11+08:00">
+                2017-11-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-07T18:05:26+08:00">
+                2017-11-07
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,503
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本以为这周训练是最短路,没想到还是搜索,总之写一下题解吧,持续更新.<br>关于dfs和bfs我已经在我的上一篇博文讲过了,有不懂的忘记的可以去看看,<a href="http://elatisy.top/2017/11/02/undefined-title/#more">这是传送门</a><br><a id="more"></a></p>
+<h1 id="A-棋盘问题"><a href="#A-棋盘问题" class="headerlink" title="A - 棋盘问题"></a>A - 棋盘问题</h1><p>在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，请编程求解对于给定形状和大小的棋盘，摆放k个棋子的所有可行的摆放方案C。</p>
+<p><strong>Input</strong><br>输入含有多组测试数据。<br>每组数据的第一行是两个正整数，n k，用一个空格隔开，表示了将在一个n*n的矩阵内描述棋盘，以及摆放棋子的数目。 n &lt;= 8 , k &lt;= n<br>当为-1 -1时表示输入结束。<br>随后的n行描述了棋盘的形状：每行有n个字符，其中 # 表示棋盘区域， . 表示空白区域（数据保证不出现多余的空白行或者空白列）。</p>
+<p><strong>Output</strong><br>对于每一组数据，给出一行输出，输出摆放的方案数目C （数据保证C&lt;2^31）。</p>
+<p><strong>Sample Input</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">2 1</div><div class="line">#.</div><div class="line">.#</div><div class="line">4 4</div><div class="line">...#</div><div class="line">..#.</div><div class="line">.#..</div><div class="line">#...</div><div class="line">-1 -1</div></pre></td></tr></table></figure></p>
+<p><strong>Sample Output</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2</div><div class="line">1</div></pre></td></tr></table></figure></p>
+<h2 id="代码-amp-amp-解析"><a href="#代码-amp-amp-解析" class="headerlink" title="代码&amp;&amp;解析"></a>代码&amp;&amp;解析</h2><p>这题和N皇后类似,我也是直接用N皇后的代码改的,使用的是dfs.<br>与N皇后不同的有三点:<br>1) 棋盘上有些地方是不能放置的(即为”.”的区域)<br>2) 仅要求不能同行同列,而可以同斜线(刚开始没注意卡了我好久)<br>3) 棋的个数可能比行数要少<br>在N皇后的基础上,解决以上几点要求即可.代码如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> N,k,sum;</div><div class="line"><span class="keyword">int</span> Xx[<span class="number">100</span>],Xy[<span class="number">100</span>];</div><div class="line"><span class="keyword">char</span> area[<span class="number">10</span>][<span class="number">10</span>];</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">place</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(Xy[n]==Xy[i]) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(Xx[n]==Xx[i]) <span class="keyword">return</span> <span class="number">0</span>;<span class="comment">//检索所有棋子,同行同列就返回0</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> t,<span class="keyword">int</span> book)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">if</span>(book&gt;k) ++sum;<span class="comment">//如果场上的棋子个数够了sum就可以+1了,无需等待搜索完所有行</span></div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(book&lt;=k&amp;&amp;t&lt;=N)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(area[t][i]==<span class="string">'#'</span>)<span class="comment">//判断能不能放棋</span></div><div class="line">            &#123;</div><div class="line">                Xx[book]=t;</div><div class="line">                Xy[book]=i;</div><div class="line">                <span class="keyword">if</span>(place(book)) dfs(t+<span class="number">1</span>,book+<span class="number">1</span>);<span class="comment">//能放棋且在这里放一个棋的情况</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        dfs(t+<span class="number">1</span>,book);<span class="comment">//无论能不能在当前行放棋,都不在当前行放棋的情况</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">//freopen("N.txt","r",stdin);</span></div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;N&gt;&gt;k&amp;&amp;N!=<span class="number">-1</span>)</div><div class="line">    &#123;</div><div class="line">        getchar();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=N;++j)</div><div class="line">            &#123;</div><div class="line">                area[i][j]=getchar();</div><div class="line">            &#125;</div><div class="line">            getchar();</div><div class="line">        &#125;</div><div class="line">        sum=<span class="number">0</span>;</div><div class="line">        dfs(<span class="number">1</span>,<span class="number">1</span>);</div><div class="line">        <span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;<span class="string">'\n'</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="B-Dungeon-Master-三维广搜"><a href="#B-Dungeon-Master-三维广搜" class="headerlink" title="B - Dungeon Master(三维广搜)"></a>B - Dungeon Master(三维广搜)</h1><p>You are trapped in a 3D dungeon and need to find the quickest way out! The dungeon is composed of unit cubes which may or may not be filled with rock. It takes one minute to move one unit north, south, east, west, up or down. You cannot move diagonally and the maze is surrounded by solid rock on all sides. </p>
+<p>Is an escape possible? If yes, how long will it take?</p>
+<p><strong>Input</strong><br>The input consists of a number of dungeons. Each dungeon description starts with a line containing three integers L, R and C (all limited to 30 in size).<br>L is the number of levels making up the dungeon.<br>R and C are the number of rows and columns making up the plan of each level.<br>Then there will follow L blocks of R lines each containing C characters. Each character describes one cell of the dungeon. A cell full of rock is indicated by a ‘#’ and empty cells are represented by a ‘.’. Your starting position is indicated by ‘S’ and the exit by the letter ‘E’. There’s a single blank line after each level. Input is terminated by three zeroes for L, R and C.</p>
+<p><strong>Output</strong><br>Each maze generates one line of output. If it is possible to reach the exit, print a line of the form<br>Escaped in x minute(s).</p>
+<p>where x is replaced by the shortest time it takes to escape.<br>If it is not possible to escape, print the line<br>Trapped!</p>
+<p><strong>Sample Input</strong><br>3 4 5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">S....</div><div class="line">.###.</div><div class="line">.##..</div><div class="line">###.#</div><div class="line"></div><div class="line">#####</div><div class="line">#####</div><div class="line">##.##</div><div class="line">##...</div><div class="line"></div><div class="line">#####</div><div class="line">#####</div><div class="line">#.###</div><div class="line">####E</div><div class="line"></div><div class="line">1 3 3</div><div class="line">S##</div><div class="line">#E#</div><div class="line">###</div><div class="line"></div><div class="line">0 0 0</div></pre></td></tr></table></figure></p>
+<p><strong>Sample Output</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Escaped in 11 minute(s).</div><div class="line">Trapped!</div></pre></td></tr></table></figure></p>
+<p>题目大意:一个人到了一个多层地牢里,他可以往四个方向走,以及回到上层和下到下层,问他是否能逃脱,如果能就输出他逃脱的最短时间,如果不能就输出”Trapped!”,具体看样例.<br>其中”.”代表路,”#”代表墙,输入的三个数字分别是地牢的层数,行数,列数,”S”是起始位置,”E”是出口.</p>
+<h2 id="代码-amp-amp-解析-1"><a href="#代码-amp-amp-解析-1" class="headerlink" title="代码&amp;&amp;解析"></a>代码&amp;&amp;解析</h2><p>这题是经典的bfs,只是它的图是三维的,所以只需把所有数组变成三维,同时增加向上和向下两个动作即可.要注意的是如果上或下层的对应位置是墙壁,他就不能向上或向下.<br>代码如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> L,R,C;</div><div class="line"><span class="keyword">char</span> area[<span class="number">50</span>][<span class="number">50</span>][<span class="number">50</span>];</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ms</span></span></div><div class="line"><span class="class">&#123;</span></div><div class="line">    <span class="keyword">int</span> x,y,z,step;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> go[<span class="number">6</span>][<span class="number">3</span>]=&#123;<span class="comment">//新增了两个动作</span></div><div class="line">    <span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="comment">///向右走</span></div><div class="line">    <span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="comment">///向后走</span></div><div class="line">    <span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="comment">///向左走</span></div><div class="line">    <span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="comment">///向前走</span></div><div class="line">    <span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="comment">///向下走</span></div><div class="line">    <span class="number">-1</span>,<span class="number">0</span>,<span class="number">0</span><span class="comment">///向上走</span></div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> z,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span><span class="comment">//即使多了一个维度,所有操作还是和标准的bfs类似</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">bool</span> book[<span class="number">50</span>][<span class="number">50</span>][<span class="number">50</span>]=&#123;<span class="number">0</span>&#125;;</div><div class="line">    ms n,temp;</div><div class="line">    n.x=x,n.y=y,n.z=z,n.step=<span class="number">0</span>;</div><div class="line">    <span class="built_in">queue</span>&lt;ms&gt; q;</div><div class="line">    q.push(n);</div><div class="line">    <span class="keyword">while</span>(!q.empty())</div><div class="line">    &#123;</div><div class="line">        n=q.front();</div><div class="line">        q.pop();</div><div class="line">        <span class="keyword">if</span>(area[n.z][n.y][n.x]==<span class="string">'E'</span>) <span class="keyword">return</span> n.step;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;++i)</div><div class="line">        &#123;</div><div class="line">            temp.z=n.z+go[i][<span class="number">0</span>];</div><div class="line">            temp.y=n.y+go[i][<span class="number">1</span>];</div><div class="line">            temp.x=n.x+go[i][<span class="number">2</span>];</div><div class="line">            <span class="keyword">if</span>(!book[temp.z][temp.y][temp.x])</div><div class="line">            &#123;</div><div class="line">                book[temp.z][temp.y][temp.x]=<span class="number">1</span>;</div><div class="line">                <span class="keyword">if</span>(area[temp.z][temp.y][temp.x]!=<span class="string">'#'</span>&amp;&amp;temp.y&lt;=R&amp;&amp;temp.x&lt;=C&amp;&amp;temp.y&gt;=<span class="number">1</span>&amp;&amp;temp.x&gt;=<span class="number">1</span>&amp;&amp;temp.z&gt;=<span class="number">1</span>&amp;&amp;temp.z&lt;=L)</div><div class="line">                &#123;<span class="comment">//要注意这里不能用area[temp.z][temp.y][temp.x]=='.',因为下方可能是出口"E"</span></div><div class="line">                 <span class="comment">//还有越界条件记得加上纵轴的</span></div><div class="line">                    temp.step=n.step+<span class="number">1</span>;</div><div class="line">                    q.push(temp);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="comment">//freopen("dungeon.txt","r",stdin);</span></div><div class="line">    <span class="keyword">int</span> x,y,z,ans;</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;L&gt;&gt;R&gt;&gt;C&amp;&amp;L)</div><div class="line">    &#123;</div><div class="line">        getchar(),ans=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=L;++k)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=R;++i)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=C;++j)</div><div class="line">                &#123;</div><div class="line">                    area[k][i][j]=getchar();</div><div class="line">                    <span class="keyword">if</span>(area[k][i][j]==<span class="string">'S'</span>)<span class="comment">//找到人进入的位置</span></div><div class="line">                    &#123;</div><div class="line">                        x=j,y=i,z=k;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                getchar();</div><div class="line">            &#125;</div><div class="line">            getchar();</div><div class="line">        &#125;</div><div class="line">        ans=bfs(z,x,y);</div><div class="line">        <span class="keyword">if</span>(ans)</div><div class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="string">"Escaped in "</span>&lt;&lt;ans&lt;&lt;<span class="string">" minute(s).\n"</span>;</div><div class="line">            <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Trapped!\n"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+  </div>
+  
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/06/undefined-title/" rel="next" title="Java的输入输出基本解析">
+                <i class="fa fa-chevron-left"></i> Java的输入输出基本解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Elatis" />
+            
+              <p class="site-author-name" itemprop="name">Elatis</p>
+              <p class="site-description motion-element" itemprop="description">人生就是一个与困抗争的过程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/elatisy" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:344750681@qq.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://music.163.com/m/user/home?id=309540036" target="_blank" title="网易云音乐">
+                    
+                      <i class="fa fa-fw fa-globe"></i>网易云音乐</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://baidu.com/" title="百度哇" target="_blank">百度哇</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://google.com/" title="谷歌哇" target="_blank">谷歌哇</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-棋盘问题"><span class="nav-number">1.</span> <span class="nav-text">A - 棋盘问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-amp-amp-解析"><span class="nav-number">1.1.</span> <span class="nav-text">代码&&解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Dungeon-Master-三维广搜"><span class="nav-number">2.</span> <span class="nav-text">B - Dungeon Master(三维广搜)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-amp-amp-解析-1"><span class="nav-number">2.1.</span> <span class="nav-text">代码&&解析</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elatis</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访问数: <span id="busuanzi_value_site_pv"></span> 次
+</span>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共15.7k字</span>
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
