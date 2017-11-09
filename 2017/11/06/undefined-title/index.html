@@ -115,7 +115,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <meta property="og:description" content="Java的输入输出可以说和C语言有挺大的区别了,接下来我将就我理解的,讲一下Java的输入输出.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://elatisy.top/2017/11/06/undefined-title/in的解释.png">
-<meta property="og:updated_time" content="2017-11-08T05:39:02.740Z">
+<meta property="og:updated_time" content="2017-11-09T06:34:08.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java的输入输出基本解析">
 <meta name="twitter:description" content="Java的输入输出可以说和C语言有挺大的区别了,接下来我将就我理解的,讲一下Java的输入输出.">
@@ -327,8 +327,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-08T13:39:02+08:00">
-                2017-11-08
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-09T14:34:08+08:00">
+                2017-11-09
               </time>
             
           </span>
@@ -377,7 +377,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,254
+                  1,918
                 </span>
               
 
@@ -393,7 +393,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  8
                 </span>
               
             </div>
@@ -440,7 +440,17 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 <p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abcd</div></pre></td></tr></table></figure></p>
 <p>输出:<br>程序报错</p>
 <p>可见程序读入了空格,但没读入换行符.而且输入的超过字符数组长度的部分会被自动忽略.这种方法的好处和弊端都显而易见,大家可自行分析.</p>
-<h2 id="使用io包里的类进行输入"><a href="#使用io包里的类进行输入" class="headerlink" title="使用io包里的类进行输入"></a>使用io包里的类进行输入</h2><p>在讲主题部分前,需要了解一个使用该方法的必要操作<br><a href="http://elatisy.top/2017/11/08/undefined-title/#more">try catch语句</a></p>
+<h2 id="使用io包里的类进行输入"><a href="#使用io包里的类进行输入" class="headerlink" title="使用io包里的类进行输入"></a>使用io包里的类进行输入</h2><p>在讲主题部分前,需要了解一个使用该方法的必要操作:<br>由于编译器一定要我们指定一个未找到文件的处理方法,所以我们必须要学习<a href="http://elatisy.top/2017/11/08/undefined-title/#more">try catch语句</a></p>
+<p>学会了trycatch语句,我们就先给输入部分搭一个框架吧<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileRead</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;   </div><div class="line">		        <span class="keyword">try</span> &#123;&#125; <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">		            System.out.println(<span class="string">"读取文件内容操作出错"</span>);   </div><div class="line">		            e.printStackTrace();</div><div class="line">		        &#125;  </div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然catch{}里你也可以什么都不填,毕竟你是肯定不会让它找不到要读取的文件的对吧?<br>接着我们要使用File型变量来调用某个文件,语法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">File file = <span class="keyword">new</span> File(<span class="string">"D:/编程/JavaFiles/text.txt"</span>);<span class="comment">//括号内填写文件的绝对路径</span></div></pre></td></tr></table></figure></p>
+<p>调用之后,我们得让系统知道我们是想读还是想写,所以接着要定义一个用来读入的变量,即”InputStreamReader”,语法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">InputStreamReader read = <span class="keyword">new</span> InputStreamReader<span class="comment">//太长了分两行</span></div><div class="line">(<span class="keyword">new</span> FileInputStream(file)<span class="comment">/*括号里填写"File"的变量名*/</span>,<span class="string">"GBK"</span>);<span class="comment">//GBK是编码方式,防止中文乱码</span></div></pre></td></tr></table></figure></p>
+<p>进行到这步后,程序就会一口气读入所有数据到”read”变量里,所以我们还要定义一个缓冲器(BufferedReader)来分步读取”read”里面的东西,语法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(read);<span class="comment">//括号里面填写"InputStreamReader"的变量名</span></div></pre></td></tr></table></figure></p>
+<p>然而缓冲器又只能选择一次读一行/一个字符/一堆字符,所以我们需要读入后将其使用对应的方法转成所需类型.<br>下面是部分字符串转换成其它变量的方法(赋值到相应类型的变量上)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Integer.parseInt(String s)<span class="comment">//转整形</span></div><div class="line">Long.parseLong(String s)<span class="comment">//转长整形</span></div><div class="line">Float.parseFloat(String s)<span class="comment">//转单精度浮点</span></div><div class="line">Double.parseDouble(String s)<span class="comment">//转双精度浮点</span></div></pre></td></tr></table></figure></p>
+<p>特别的,将读取的字符串拆成一个个字符的方法(s是读取的字符串),c[]是字符数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();++i)</div><div class="line">&#123;</div><div class="line">	c[i]=s.charAt(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>有时候数据都会一行包含数个数字,用空格隔开,对于这类数据,我们可以使用split()方法将其拆分成多个字符串然后转换,例子如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> ((s = br.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">            	  String[] s1=s.split(<span class="string">" "</span>);<span class="comment">//括号里填你想要在什么字符处隔开,用双引号括起来</span></div><div class="line">            	  	<span class="keyword">for</span>(String str:s1)</div><div class="line">            	  	&#123;</div><div class="line">            	  		a=Integer.parseInt(str);</div><div class="line">            	  		System.out.println(a);</div><div class="line">            	  	&#125;</div><div class="line">               &#125;</div></pre></td></tr></table></figure></p>
+<p>示例代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileRead</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;   </div><div class="line">					<span class="keyword">try</span> &#123;    </div><div class="line">	           File file = <span class="keyword">new</span> File(<span class="string">"D:/编程/JavaFiles/text.txt"</span>);</div><div class="line">		                InputStreamReader read = <span class="keyword">new</span> InputStreamReader(   </div><div class="line">		                        <span class="keyword">new</span> FileInputStream(file),<span class="string">"GBK"</span>);   </div><div class="line">		                BufferedReader br = <span class="keyword">new</span> BufferedReader(read);</div><div class="line">		                String s =<span class="string">""</span>;</div><div class="line">		                <span class="keyword">int</span> a;</div><div class="line">		              <span class="keyword">while</span> ((s = br.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">		            	  String[] s1=s.split(<span class="string">" "</span>);</div><div class="line">		            	  	<span class="keyword">for</span>(String str:s1)</div><div class="line">		            	  	&#123;</div><div class="line">		            	  		a=Integer.parseInt(str);</div><div class="line">		            	  		System.out.println(a);</div><div class="line">		            	  	&#125;</div><div class="line">		               &#125;</div><div class="line">		               read.close(); </div><div class="line">		        &#125;<span class="keyword">catch</span> (Exception e) &#123;&#125;  </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>读入的文件中是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123 456</div><div class="line">654 321</div></pre></td></tr></table></figure></p>
+<p>运行后输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">123</div><div class="line">456</div><div class="line">654</div><div class="line">321</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -701,7 +711,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共19.4k字</span>
+  <span class="post-count">博客全站共20.1k字</span>
 </div>
 
 <!-- 
