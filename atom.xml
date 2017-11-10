@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2017-11-09T06:03:14.484Z</updated>
+  <updated>2017-11-10T05:32:46.234Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java/C++的高精度算法实现</title>
+    <link href="http://elatisy.top/2017/11/10/undefined-title/"/>
+    <id>http://elatisy.top/2017/11/10/undefined-title/</id>
+    <published>2017-11-10T05:21:39.000Z</published>
+    <updated>2017-11-10T05:32:46.234Z</updated>
+    
+    <content type="html"><![CDATA[<p>开坑待编辑</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;开坑待编辑&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="算法模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
+    
+      <category term="Java/C++" scheme="http://elatisy.top/tags/Java-C/"/>
+    
+  </entry>
   
   <entry>
     <title>对拍程序的制作</title>
