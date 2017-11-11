@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+
+<script type="text/javascript"
+color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+<script type="text/javascript"
+color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-lines.js/1.0.0/canvas-lines.min.js"></script>
+
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Java的输入输出可以说和C语言有挺大的区别了,接下来我将就我理解的,讲一下Java的输入输出.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java的输入输出基本解析">
+<meta property="og:url" content="http://elatisy.top/posts/31935/index.html">
+<meta property="og:site_name" content="Ela&#39;s notes">
+<meta property="og:description" content="Java的输入输出可以说和C语言有挺大的区别了,接下来我将就我理解的,讲一下Java的输入输出.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://elatisy.top/posts/31935/in的解释.png">
+<meta property="og:updated_time" content="2017-11-11T02:10:00.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java的输入输出基本解析">
+<meta name="twitter:description" content="Java的输入输出可以说和C语言有挺大的区别了,接下来我将就我理解的,讲一下Java的输入输出.">
+<meta name="twitter:image" content="http://elatisy.top/posts/31935/in的解释.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://elatisy.top/posts/31935/"/>
+
+
+
+
+
+  <title>Java的输入输出基本解析 | Ela's notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/elatisy/elatisy.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ela's notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://elatisy.top/posts/31935/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elatis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ela's notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java的输入输出基本解析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T17:19:18+08:00">
+                2017-11-06
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-11T10:10:00+08:00">
+                2017-11-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,918
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Java的输入输出可以说和C语言有挺大的区别了,接下来我将就我理解的,讲一下Java的输入输出.<br><a id="more"></a></p>
+<h1 id="Java的输入"><a href="#Java的输入" class="headerlink" title="Java的输入"></a>Java的输入</h1><p>Java的输入一般有两大类方法,第一类是使用util包里的Scanner型变量和标准输入”System.in”.第二类是调用io包里的FileInputStream类和InputStreamReader型变量.</p>
+<h2 id="使用Scanner进行输入"><a href="#使用Scanner进行输入" class="headerlink" title="使用Scanner进行输入"></a>使用Scanner进行输入</h2><p>使用该类型变量需要在代码文件的最前端加上<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.*;</div></pre></td></tr></table></figure></p>
+<p>表示调用了util包里面的所有类.<br>接着要定义一个Scanner型变量<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner sc;</div></pre></td></tr></table></figure></p>
+<p>一般Scanner的名称使用sc或in<br>同时我们还要使用”new”来指定它的类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sc=<span class="keyword">new</span> Scanner(System.in);</div></pre></td></tr></table></figure></p>
+<p>这样就完成了一个Scanner的定义.<br>以上代码的”System.in”是什么意思呢?首先,eclipse中对System.in函数的解释是这样的:<br><img src="/posts/31935/in的解释.png" alt="in的解释.png" title=""><br>实际上,System.in就是Java的标准输入.默认情况下用于输入的设备是键盘.同理还有System.out函数,默认设备为显示器.<br>可Java并不支持控制台直接输入,所以如果想让程序调用输入的内容,就要创建一个Scanner变量作为它的对象.<br>定义好Scanner后,该如何使用它呢?<br>在代码文件中打出<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sc.</div></pre></td></tr></table></figure></p>
+<p>在打出”.”后会跳出茫茫多的方法供你选择,以下就列举几种常用的方法</p>
+<p>nextByte(); 读取一个byte类型的整数。<br>nextShort(); 读取一个short类型的整数。<br>nextInt(); 读取一个int类型的整数。<br>nextLong(); 读取一个long类型的整数。<br>nextFloat(); 读取一个float类型的整数。<br>nextDouble(); 读取一个double类型的整数。<br>next(); 读取一个字符串，该字符在一个空白符之前结束。<br>nextLine(); 读取一行文本（即以按下enter键为结束标志）</p>
+<p>使用示例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.*; </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EqualSign</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line"><span class="function">	</span>&#123;</div><div class="line">		</div><div class="line">		Scanner sc=<span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> a;</div><div class="line">		a=sc.nextInt();</div><div class="line">		<span class="keyword">double</span> b;</div><div class="line">		b=sc.nextDouble();</div><div class="line">		String s;</div><div class="line">		s=sc.nextLine();</div><div class="line">		System.out.println(<span class="string">"a="</span>+a);</div><div class="line">		System.out.println(<span class="string">"b="</span>+b);</div><div class="line">		System.out.println(<span class="string">"s="</span>+s);</div><div class="line">		sc.close();<span class="comment">//使用完Scanner后使用close()方法将其关闭,这样才能保证程序的健康</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面来测试以下这个程序<br>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1 1.5 abcdefg</div></pre></td></tr></table></figure></p>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a=1</div><div class="line">b=1.5</div><div class="line">s= abcdefg</div></pre></td></tr></table></figure></p>
+<p>应当注意到字符串s前的空格.因为sc读完一个浮点数后,并没有清除之后的空格.<br>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1.5 1 abcdefg</div></pre></td></tr></table></figure></p>
+<p>输出: 程序报错<br>可见Scanner是按输入顺序开始遍历的,而且遍历到与所求类型不符的数据后会报错.<br>可输入中也有空格,为什么没报错?那是因为Scanner以空格和换行作为一个数据的结束符号(与C语言中cin类似).</p>
+<p><strong>特别的,</strong>如何使用Scanner来读取单个字符?Scanner类中可没有nextChar()这种方法.一般要读取单个字符,可使用next()方法,加上一些(sao)操作,举例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">text</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line"><span class="function">	</span>&#123;</div><div class="line">		</div><div class="line">		Scanner sc=<span class="keyword">new</span> Scanner(System.in);</div><div class="line">		String s;</div><div class="line">		<span class="keyword">char</span>[] c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">5</span>];</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;++i)</div><div class="line">		&#123;</div><div class="line">			s=sc.next();<span class="comment">//由于无法将读取的内容直接存到字符变量里,先存到一个字符串变量上</span></div><div class="line">			c[i]=s.charAt(<span class="number">0</span>);<span class="comment">//然后再转换成字符变量</span></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;++i)</div><div class="line">		&#123;</div><div class="line">			System.out.println(<span class="string">"c["</span>+i+<span class="string">"]="</span>+c[i]);</div><div class="line">		&#125;</div><div class="line">		sc.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行上面的程序<br>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a b c d e</div></pre></td></tr></table></figure></p>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">c[0]=a</div><div class="line">c[1]=b</div><div class="line">c[2]=c</div><div class="line">c[3]=d</div><div class="line">c[4]=e</div></pre></td></tr></table></figure></p>
+<p>再测试一组<br>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">abcde</div><div class="line">12345</div><div class="line">fghij</div><div class="line">klmno</div><div class="line">pqrst</div></pre></td></tr></table></figure></p>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">c[0]=a</div><div class="line">c[1]=1</div><div class="line">c[2]=f</div><div class="line">c[3]=k</div><div class="line">c[4]=p</div></pre></td></tr></table></figure></p>
+<p>经过上面两组测试,使用next()方法输入字符的缺点已经显而易见了.由于next()使用空白符作为结束标志,而且next()实际上是一个读入字符串的方法,不仅连在一起的字符无法分开识别,而且还不能获取空格和换行符.那么如何获取空白符呢?这就要使用nextLine()方法进行.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">text</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line"><span class="function">	</span>&#123;</div><div class="line">		</div><div class="line">		Scanner sc=<span class="keyword">new</span> Scanner(System.in);</div><div class="line">		String s;</div><div class="line">		<span class="keyword">char</span>[] c=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">5</span>];</div><div class="line">		s=sc.nextLine();<span class="comment">//同样无法直接将读入的数据储存到字符变量,需要先存到字符串变量</span></div><div class="line">		c=s.toCharArray();<span class="comment">//java中字符串和字符数组是两种不同的东西,所以需要使用toCharArray()方法来转换</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;++i)</div><div class="line">		&#123;</div><div class="line">			System.out.println(<span class="string">"c["</span>+i+<span class="string">"]="</span>+c[i]);</div><div class="line">		&#125;</div><div class="line">		sc.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行这个程序,开始测试<br>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ab cd</div></pre></td></tr></table></figure></p>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">c[0]=a</div><div class="line">c[1]=b</div><div class="line">c[2]= </div><div class="line">c[3]=c</div><div class="line">c[4]=d</div></pre></td></tr></table></figure></p>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abcdefg</div></pre></td></tr></table></figure></p>
+<p>输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">c[0]=a</div><div class="line">c[1]=b</div><div class="line">c[2]=c</div><div class="line">c[3]=d</div><div class="line">c[4]=e</div></pre></td></tr></table></figure></p>
+<p>输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abcd</div></pre></td></tr></table></figure></p>
+<p>输出:<br>程序报错</p>
+<p>可见程序读入了空格,但没读入换行符.而且输入的超过字符数组长度的部分会被自动忽略.这种方法的好处和弊端都显而易见,大家可自行分析.</p>
+<h2 id="使用io包里的类进行输入"><a href="#使用io包里的类进行输入" class="headerlink" title="使用io包里的类进行输入"></a>使用io包里的类进行输入</h2><p>在讲主题部分前,需要了解一个使用该方法的必要操作:<br>由于编译器一定要我们指定一个未找到文件的处理方法,所以我们必须要学习<a href="http://elatisy.top/2017/11/08/undefined-title/#more">try catch语句</a></p>
+<p>学会了trycatch语句,我们就先给输入部分搭一个框架吧<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileRead</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;   </div><div class="line">		        <span class="keyword">try</span> &#123;&#125; <span class="keyword">catch</span> (Exception e) &#123;   </div><div class="line">		            System.out.println(<span class="string">"读取文件内容操作出错"</span>);   </div><div class="line">		            e.printStackTrace();</div><div class="line">		        &#125;  </div><div class="line">		&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当然catch{}里你也可以什么都不填,毕竟你是肯定不会让它找不到要读取的文件的对吧?<br>接着我们要使用File型变量来调用某个文件,语法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">File file = <span class="keyword">new</span> File(<span class="string">"D:/编程/JavaFiles/text.txt"</span>);<span class="comment">//括号内填写文件的绝对路径</span></div></pre></td></tr></table></figure></p>
+<p>调用之后,我们得让系统知道我们是想读还是想写,所以接着要定义一个用来读入的变量,即”InputStreamReader”,语法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">InputStreamReader read = <span class="keyword">new</span> InputStreamReader<span class="comment">//太长了分两行</span></div><div class="line">(<span class="keyword">new</span> FileInputStream(file)<span class="comment">/*括号里填写"File"的变量名*/</span>,<span class="string">"GBK"</span>);<span class="comment">//GBK是编码方式,防止中文乱码</span></div></pre></td></tr></table></figure></p>
+<p>进行到这步后,程序就会一口气读入所有数据到”read”变量里,所以我们还要定义一个缓冲器(BufferedReader)来分步读取”read”里面的东西,语法如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(read);<span class="comment">//括号里面填写"InputStreamReader"的变量名</span></div></pre></td></tr></table></figure></p>
+<p>然而缓冲器又只能选择一次读一行/一个字符/一堆字符,所以我们需要读入后将其使用对应的方法转成所需类型.<br>下面是部分字符串转换成其它变量的方法(赋值到相应类型的变量上)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Integer.parseInt(String s)<span class="comment">//转整形</span></div><div class="line">Long.parseLong(String s)<span class="comment">//转长整形</span></div><div class="line">Float.parseFloat(String s)<span class="comment">//转单精度浮点</span></div><div class="line">Double.parseDouble(String s)<span class="comment">//转双精度浮点</span></div></pre></td></tr></table></figure></p>
+<p>特别的,将读取的字符串拆成一个个字符的方法(s是读取的字符串),c[]是字符数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length();++i)</div><div class="line">&#123;</div><div class="line">	c[i]=s.charAt(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>有时候数据都会一行包含数个数字,用空格隔开,对于这类数据,我们可以使用split()方法将其拆分成多个字符串然后转换,例子如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> ((s = br.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">            	  String[] s1=s.split(<span class="string">" "</span>);<span class="comment">//括号里填你想要在什么字符处隔开,用双引号括起来</span></div><div class="line">            	  	<span class="keyword">for</span>(String str:s1)</div><div class="line">            	  	&#123;</div><div class="line">            	  		a=Integer.parseInt(str);</div><div class="line">            	  		System.out.println(a);</div><div class="line">            	  	&#125;</div><div class="line">               &#125;</div></pre></td></tr></table></figure></p>
+<p>示例代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileRead</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String arg[])</span> </span>&#123;   </div><div class="line">					<span class="keyword">try</span> &#123;    </div><div class="line">	           File file = <span class="keyword">new</span> File(<span class="string">"D:/编程/JavaFiles/text.txt"</span>);</div><div class="line">		                InputStreamReader read = <span class="keyword">new</span> InputStreamReader(   </div><div class="line">		                        <span class="keyword">new</span> FileInputStream(file),<span class="string">"GBK"</span>);   </div><div class="line">		                BufferedReader br = <span class="keyword">new</span> BufferedReader(read);</div><div class="line">		                String s =<span class="string">""</span>;</div><div class="line">		                <span class="keyword">int</span> a;</div><div class="line">		              <span class="keyword">while</span> ((s = br.readLine()) != <span class="keyword">null</span>) &#123;</div><div class="line">		            	  String[] s1=s.split(<span class="string">" "</span>);</div><div class="line">		            	  	<span class="keyword">for</span>(String str:s1)</div><div class="line">		            	  	&#123;</div><div class="line">		            	  		a=Integer.parseInt(str);</div><div class="line">		            	  		System.out.println(a);</div><div class="line">		            	  	&#125;</div><div class="line">		               &#125;</div><div class="line">		               read.close(); </div><div class="line">		        &#125;<span class="keyword">catch</span> (Exception e) &#123;&#125;  </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>读入的文件中是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">123 456</div><div class="line">654 321</div></pre></td></tr></table></figure></p>
+<p>运行后输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">123</div><div class="line">456</div><div class="line">654</div><div class="line">321</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+  </div>
+  
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/29827/" rel="next" title="初识Java">
+                <i class="fa fa-chevron-left"></i> 初识Java
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/28283/" rel="prev" title="搜索专题[2]解析">
+                搜索专题[2]解析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Elatis" />
+            
+              <p class="site-author-name" itemprop="name">Elatis</p>
+              <p class="site-description motion-element" itemprop="description">人生就是一个与困抗争的过程</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/elatisy" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:344750681@qq.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://elatisy.top/2017/10/27/undefined-title/" title="博客美化" target="_blank">博客美化</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java的输入"><span class="nav-number">1.</span> <span class="nav-text">Java的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Scanner进行输入"><span class="nav-number">1.1.</span> <span class="nav-text">使用Scanner进行输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用io包里的类进行输入"><span class="nav-number">1.2.</span> <span class="nav-text">使用io包里的类进行输入</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Elatis</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访问数: <span id="busuanzi_value_site_pv"></span> 次
+</span>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共22.1k字</span>
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+ -->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
