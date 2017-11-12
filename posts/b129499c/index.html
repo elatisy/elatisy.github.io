@@ -107,20 +107,31 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-<meta name="description" content="今天快被这笔记本弄疯了.弄个压缩卷弄半天,刚开始压100G干等半小时没反应直接关控制面板,后来弄40G还是等了15分钟左右,可是一次压1G却十几秒不到,难道压的空间和压缩时间是呈指数级增长的吗qwq好不容易弄好了压缩卷开始装双系统,刻盘很顺利,但是进了BIOS又开始懵逼了.联想笔记本根本不是用BIOS的!好不容易换成优先U盘启动,进入Ubuntu安装界面,很顺利,但是到了安装类型又开始懵逼了.界面">
+<meta name="description" content="今天队内赛思维江化了一晚上,很伤心,写篇博文冷静一下吧.由于不明原因,我的电脑安装双系统时出了某些critical error,Ubuntu的安装系统无法识别到我的Windows系统,也无法选择覆盖安装,于是我只能退求其次使用虚拟机安装Ubuntu系统(不管是不是联想的问题,先容许我黑一波联想).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初识Java">
-<meta property="og:url" content="http://elatisy.top/posts/29827/index.html">
+<meta property="og:title" content="Windows系统下使用虚拟机运行Linux">
+<meta property="og:url" content="http://elatisy.top/posts/b129499c/index.html">
 <meta property="og:site_name" content="Ela&#39;s notes">
-<meta property="og:description" content="今天快被这笔记本弄疯了.弄个压缩卷弄半天,刚开始压100G干等半小时没反应直接关控制面板,后来弄40G还是等了15分钟左右,可是一次压1G却十几秒不到,难道压的空间和压缩时间是呈指数级增长的吗qwq好不容易弄好了压缩卷开始装双系统,刻盘很顺利,但是进了BIOS又开始懵逼了.联想笔记本根本不是用BIOS的!好不容易换成优先U盘启动,进入Ubuntu安装界面,很顺利,但是到了安装类型又开始懵逼了.界面">
+<meta property="og:description" content="今天队内赛思维江化了一晚上,很伤心,写篇博文冷静一下吧.由于不明原因,我的电脑安装双系统时出了某些critical error,Ubuntu的安装系统无法识别到我的Windows系统,也无法选择覆盖安装,于是我只能退求其次使用虚拟机安装Ubuntu系统(不管是不是联想的问题,先容许我黑一波联想).">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://elatisy.top/posts/29827/ubuntu.jpg">
-<meta property="og:image" content="http://elatisy.top/posts/29827/镇楼.jpg">
-<meta property="og:updated_time" content="2017-11-11T02:10:00.358Z">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/下载页面.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/新建.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/内存.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/硬盘.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/备份.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/处理器.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/光盘映像.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/安装Ubuntu.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/安装类型.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/选择时区.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/键盘布局.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/你是谁.png">
+<meta property="og:image" content="http://elatisy.top/posts/undefined/安装中.png">
+<meta property="og:updated_time" content="2017-11-11T16:38:47.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初识Java">
-<meta name="twitter:description" content="今天快被这笔记本弄疯了.弄个压缩卷弄半天,刚开始压100G干等半小时没反应直接关控制面板,后来弄40G还是等了15分钟左右,可是一次压1G却十几秒不到,难道压的空间和压缩时间是呈指数级增长的吗qwq好不容易弄好了压缩卷开始装双系统,刻盘很顺利,但是进了BIOS又开始懵逼了.联想笔记本根本不是用BIOS的!好不容易换成优先U盘启动,进入Ubuntu安装界面,很顺利,但是到了安装类型又开始懵逼了.界面">
-<meta name="twitter:image" content="http://elatisy.top/posts/29827/ubuntu.jpg">
+<meta name="twitter:title" content="Windows系统下使用虚拟机运行Linux">
+<meta name="twitter:description" content="今天队内赛思维江化了一晚上,很伤心,写篇博文冷静一下吧.由于不明原因,我的电脑安装双系统时出了某些critical error,Ubuntu的安装系统无法识别到我的Windows系统,也无法选择覆盖安装,于是我只能退求其次使用虚拟机安装Ubuntu系统(不管是不是联想的问题,先容许我黑一波联想).">
+<meta name="twitter:image" content="http://elatisy.top/posts/undefined/下载页面.png">
 
 
 
@@ -150,13 +161,13 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-  <link rel="canonical" href="http://elatisy.top/posts/29827/"/>
+  <link rel="canonical" href="http://elatisy.top/posts/b129499c/"/>
 
 
 
 
 
-  <title>初识Java | Ela's notes</title>
+  <title>Windows系统下使用虚拟机运行Linux | Ela's notes</title>
   
 
 
@@ -283,7 +294,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://elatisy.top/posts/29827/">
+    <link itemprop="mainEntityOfPage" href="http://elatisy.top/posts/b129499c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elatis">
@@ -300,7 +311,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
         
         
-          <h1 class="post-title" itemprop="name headline">初识Java</h1>
+          <h1 class="post-title" itemprop="name headline">Windows系统下使用虚拟机运行Linux</h1>
         
 
         <div class="post-meta">
@@ -312,8 +323,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-05T23:11:02+08:00">
-                2017-11-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-11T22:50:27+08:00">
+                2017-11-11
               </time>
             
 
@@ -328,8 +339,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-11T10:10:00+08:00">
-                2017-11-11
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-12T00:38:47+08:00">
+                2017-11-12
               </time>
             
           </span>
@@ -347,8 +358,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -378,7 +389,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  979
+                  1,578
                 </span>
               
 
@@ -394,7 +405,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -415,23 +426,32 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <p>今天快被这笔记本弄疯了.弄个压缩卷弄半天,刚开始压100G干等半小时没反应直接关控制面板,后来弄40G还是等了15分钟左右,可是一次压1G却十几秒不到,难道压的空间和压缩时间是呈指数级增长的吗qwq<br>好不容易弄好了压缩卷开始装双系统,刻盘很顺利,但是进了BIOS又开始懵逼了.<br>联想笔记本<strong>根本不是用BIOS的!</strong><br>好不容易换成优先U盘启动,进入Ubuntu安装界面,很顺利,但是到了安装类型又开始懵逼了.<br><strong><font size="5">界面上好大一片空白啊!!</font></strong><br><img src="/posts/29827/ubuntu.jpg" alt="ubuntu.jpg" title=""><br>有任何选项给我选么?<br>百度了一大堆,感觉就我遇到这种情况QAQ<br>决定开始攒钱买一台<strong>不是联想的</strong>笔记本了<br><img src="/posts/29827/镇楼.jpg" alt="镇楼.jpg" title=""><br>还是先写一篇博文冷静一下吧<br><a id="more"></a></p>
-<p>这周末事少,被宿舍网防沉迷(卡的一批)后,又翻出了我的Java书看了看.</p>
-<h1 id="一个最基础的Java程序"><a href="#一个最基础的Java程序" class="headerlink" title="一个最基础的Java程序"></a>一个最基础的Java程序</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJava</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Hello Java"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>执行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hello Java</div></pre></td></tr></table></figure></p>
-<p>Java和C看起来截然不同,但仔细研究的话,这两者相差也不是很大<br>对于上面那个程序,其中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJava</span> </span>&#123;</div></pre></td></tr></table></figure></p>
-<p>是Java独有的(应该吧)”类”的声明.实际上,在创建这个Java源代码文件(类)之前,还需要创建一个包(package),并且Java调用本地的包和类非常简单.<br>再往下一行的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div></pre></td></tr></table></figure></p>
-<p>大概就等于C的<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div></pre></td></tr></table></figure></p>
-<p>那么这么多单词分别都什么意思呢,我百度了一下<br>“<strong>public</strong>“<br>是权限修饰符,权限最大.表明任何类或者对象可以调用这个方法(C中叫函数)</p>
-<p>“<strong>static</strong>“<br>表示这个方法是静态的,无需对象就可以直接调用.而main函数作为程序的主函数,必须要在其它方法之前运行,此时自然无法手动调用,只能让程序自行调用.相当于给程序开了个门,程序的所有内容,都要进入这扇门才能运行.</p>
-<p>“<strong>main()</strong>“<br>主函数标识,不解释</p>
-<p>“<strong>String[] args</strong>“<br>意思是定义了一个字符串数组”args”,放到main的括号里作为main的参数.可为什么要将这个字符串数组作为main的参数呢(C语言main的参数为void)?<br>我们不妨试着输出一下这个数组.运行如下程序:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJava</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		System.out.println(args);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>运行结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[Ljava.lang.String;@3339ad8e</div></pre></td></tr></table></figure></p>
-<p>这句话到底是什么意思呢?我查了一(半)下(天)百度<br>args=arguments,是main函数的”形参”,表明调用main函数时输入的参数.当你没有指定一个参数的时候,它会自动生成.当然你不想用args当主函数的参数名,换成其它名称也行.<br>为什么要用String呢?因为所有输入的数据都可以解释为一个字符串.其实整形数,浮点数,单个字符,多个字符等数据,都可以把它看成一个字符串.这样保证了你的程序能成功调用main函数.</p>
-<p>最前面的两行构成了java程序最基本的框架.<br>而接下来的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.out.println(<span class="string">"Hello Java"</span>);</div></pre></td></tr></table></figure></p>
-<p>就相当于C的<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">printf</span>(<span class="string">"Hello Java\n"</span>)</div></pre></td></tr></table></figure></p>
-<p>其中”System.out.println”是一个类名,括号里就是它的参数.println表示输出一行,输出完成后自动换行,也就是在最后添上了一个换行符.</p>
-<p>最后再放几个卫星吧.<br>这个星期还会写一篇基于C++的数据结构算法的博文.<br>以及”数学”分类的创建(前提是我要搞懂怎么输入数学符号).<br>可能还会写一篇java的输入输出的博文.</p>
+        <p>今天队内赛思维江化了一晚上,很伤心,写篇博文冷静一下吧.<br>由于不明原因,我的电脑安装双系统时出了某些critical error,Ubuntu的安装系统无法识别到我的Windows系统,也无法选择覆盖安装,于是我只能退求其次使用虚拟机安装Ubuntu系统(不管是不是联想的问题,先容许我黑一波联想).<br><a id="more"></a></p>
+<h1 id="虚拟机制作软件的下载安装"><a href="#虚拟机制作软件的下载安装" class="headerlink" title="虚拟机制作软件的下载安装"></a>虚拟机制作软件的下载安装</h1><p>虚拟机是指通过软件模拟来实现一个计算机系统上运行的另一个隔离的计算机系统.既然是通过软件来模拟,第一步当然是要下载虚拟机软件啦.<br>首先上<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">virtualbox的官网</a>下载符合自己计算机系统的虚拟机版本.<br><img src="/posts/undefined/下载页面.png" alt="下载页面.png" title=""><br>下载完成后根据提示安装即可.</p>
+<h1 id="Linux光盘映像的下载"><a href="#Linux光盘映像的下载" class="headerlink" title="Linux光盘映像的下载"></a>Linux光盘映像的下载</h1><p>制作虚拟机需要一个操作系统的光盘映像.你可以使用你之前找到的光盘映像,几乎所有的操作系统,如winxp,win7,deepin,Ubuntu等都可以.这里将提供一个ubuntu光盘映像的下载.<br><a href="http://cn.ubuntu.com/download/" target="_blank" rel="external">下载地址</a><br>现在的电脑一般都是64位的,所以下载64位的光盘映像即可.</p>
+<h1 id="开始制作虚拟机"><a href="#开始制作虚拟机" class="headerlink" title="开始制作虚拟机"></a>开始制作虚拟机</h1><p>打开之前下载的虚拟机制作软件,点击左上角的”新建”,然后输入你想要的虚拟机系统的名称,这个名称可以任意,但是一些特殊的名称有利于程序直接识别你要制作的虚拟机的类型和版本.如我在此输入了ubuntu,下方的”类型”和”版本”就自动发生了变化.当然你也可以手动调整你要装的虚拟机类型和版本.<br><img src="/posts/undefined/新建.png" alt="新建.png" title=""><br><strong><font size="5">注意:</font></strong>如果你的系统是64位的,而且你在虚拟机版本里找不到64位系统的选项,很可能是你的cpu的一些保护机制,使得你无法在该cpu上运行虚拟机.请查看本文最后的”无法安装64位系统解决方法”.</p>
+<p>下一步是给虚拟机分配内存大小,这个由你自己和你的电脑配置来决定,最好不要低于它建议的内存大小,否则虚拟机会非常卡(本来就卡爆).<br><img src="/posts/undefined/内存.png" alt="内存.png" title=""></p>
+<p>接下来是给虚拟机分配虚拟硬盘.虚拟硬盘是储存在计算机硬盘中的一个文件,虚拟机的所有文件都要放在这个文件里.如果你是第一次创建虚拟机,或者没有多余的虚拟硬盘,就选择”现在创建虚拟硬盘”.<br><img src="/posts/undefined/硬盘.png" alt="硬盘.png" title=""></p>
+<p>再下一步是选择虚拟硬盘的文件类型,推荐使用VHD,也可以直接点击下一步.</p>
+<p>接着是让你选择虚拟硬盘是动态分配大小还是固定大小,推荐使用固定大小的硬盘,这样系统响应比较快.动态大小的硬盘则比较灵活,特别是你的硬盘空间不太够时.如果你选择了固定大小,系统创建虚拟硬盘可能需要一定的时间(15分钟左右).</p>
+<p>下一步是让你决定虚拟硬盘的名称,路径,大小,如果你上一步选择了动态分配,就是让你选择它的最大大小.大小推荐30G以上.自然是固态硬盘效果最佳,但是我不舍得给它用qwq<br>虚拟硬盘与虚拟机制作软件不在同一目录,甚至不在同一盘符都没太大影响.<br><strong>千万不要放在C盘</strong></p>
+<p>虚拟硬盘创建好后,你的VB管理器上会多了一个虚拟机,但我们还得经过调试才能使用它.点击工具栏中的”设置”.</p>
+<p>首先我们来规定一下它的备份位置,默认是在c盘中,我们最好把它改到另一个地方.<br><img src="/posts/undefined/备份.png" alt="备份.png" title=""></p>
+<p>然后点击右边的”系统”,这里可以更改你分配给它的内存大小和处理器功率和数量.必要的是点到”处理器”一栏,根据你电脑的性能设定给它的处理器数量和运行峰值.最好拖动到绿条的位置.最后再把下面的”扩展特性”钩一下.<br><img src="/posts/undefined/处理器.png" alt="处理器.png" title=""></p>
+<p>“显示”一栏同样根据你电脑配置给它分配显存,一般没必要,除非你想用虚拟机玩游戏.</p>
+<p>接着点击到”存储”一栏,并选择你之前下好的光盘映像.<br><img src="/posts/undefined/光盘映像.png" alt="光盘映像.png" title=""></p>
+<p>剩下的一些设置可以以后慢慢探索,当你设置好光盘映像后,就可以点击”OK”了.</p>
+<p>然后我们双击运行虚拟机,安装操作系统.</p>
+<h1 id="Ubuntu操作系统的安装"><a href="#Ubuntu操作系统的安装" class="headerlink" title="Ubuntu操作系统的安装"></a>Ubuntu操作系统的安装</h1><p>虚拟机运行后,等待Ubuntu系统加载好,然后会出现这个界面,点击安装Ubuntu(右边语言选项下拉有中文).<br><img src="/posts/undefined/安装Ubuntu.png" alt="安装Ubuntu.png" title=""></p>
+<p>下一步出现的两个选项钩不钩没什么影响,你自己决定,然后点击下一步.(懒得截图了)</p>
+<p>安装类型选择”清除整个磁盘并安装Ubuntu”,放心,清除整个磁盘是指清除它的虚拟硬盘,虚拟机并不会对主系统造成任何影响.<br><img src="/posts/undefined/安装类型.png" alt="安装类型.png" title=""></p>
+<p>然后选择时区.输入beijing会有北京市选项.<br><img src="/posts/undefined/选择时区.png" alt="选择时区.png" title=""></p>
+<p>然后是键盘布局,选择汉语<br><img src="/posts/undefined/键盘布局.png" alt="键盘布局.png" title=""></p>
+<p>然后输入你的信息和密码,可以选择自动登录以免麻烦(谁会偷到你虚拟机的内容?)<br><img src="/posts/undefined/你是谁.png" alt="你是谁.png" title=""></p>
+<p>接着等待它安装即可.<br><img src="/posts/undefined/安装中.png" alt="安装中.png" title=""></p>
+<p>虚拟机的设置到此就结束了.当然我相信大家装虚拟机应该不是为了玩游戏吧(windows某理财软件够你玩一辈子),下一篇文章将介绍一下Ubuntu下的编程环境配置和输入法的配置.</p>
+<h1 id="无法安装64位系统虚拟机的解决方法"><a href="#无法安装64位系统虚拟机的解决方法" class="headerlink" title="无法安装64位系统虚拟机的解决方法"></a>无法安装64位系统虚拟机的解决方法</h1><p>这个问题的主要原因是cpu的保护机制使得它默认无法用于虚拟机的运行,当然这个保护是可以关掉的,而且也很简单.</p>
+<p>首先重启电脑,在进入windows登入界面前按F2进入bios(不同型号的主板进入bios的按键可能会有不同).<br>未完待编辑</p>
 
       
     </div>
@@ -466,8 +486,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/37663/" rel="next" title="深度优先搜索和广度优先搜索">
-                <i class="fa fa-chevron-left"></i> 深度优先搜索和广度优先搜索
+              <a href="/posts/5fed7bce/" rel="next" title="C++中的链表算法">
+                <i class="fa fa-chevron-left"></i> C++中的链表算法
               </a>
             
           </div>
@@ -475,10 +495,6 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/31935/" rel="prev" title="Java的输入输出基本解析">
-                Java的输入输出基本解析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -648,7 +664,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一个最基础的Java程序"><span class="nav-number">1.</span> <span class="nav-text">一个最基础的Java程序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机制作软件的下载安装"><span class="nav-number">1.</span> <span class="nav-text">虚拟机制作软件的下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux光盘映像的下载"><span class="nav-number">2.</span> <span class="nav-text">Linux光盘映像的下载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开始制作虚拟机"><span class="nav-number">3.</span> <span class="nav-text">开始制作虚拟机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu操作系统的安装"><span class="nav-number">4.</span> <span class="nav-text">Ubuntu操作系统的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无法安装64位系统虚拟机的解决方法"><span class="nav-number">5.</span> <span class="nav-text">无法安装64位系统虚拟机的解决方法</span></a></li></ol></div>
             
 
           </div>
