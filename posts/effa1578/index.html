@@ -84,7 +84,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="算法," />
 
 
 <script>
@@ -107,16 +107,18 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-<meta name="description" content="人生就是一个与困抗争的过程">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ela&#39;s notes">
-<meta property="og:url" content="http://elatisy.top/categories/模板/index.html">
+<meta name="description" content="&amp;lt;缓更&amp;gt;没想到这周是贪心算法(说好的最短路呢),本来是不想写题解的,但是既然能水一贴,那我还是不放过这个机会了(滑稽).其实贪心算法并不是具体的什么算法,而是一种通过局部最优解来猜测通常情况最优解的,由有限推无限的方法.类似于数学归纳法,但是相对数学归纳法,贪心算法并没有那么严谨.对于一个经常思维江化的人来说(我),几个小时找不出贪心策略是常有的事QAQ顺便数学专题的第一篇暂定为费马小">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贪心算法解析">
+<meta property="og:url" content="http://elatisy.top/posts/effa1578/index.html">
 <meta property="og:site_name" content="Ela&#39;s notes">
-<meta property="og:description" content="人生就是一个与困抗争的过程">
+<meta property="og:description" content="&amp;lt;缓更&amp;gt;没想到这周是贪心算法(说好的最短路呢),本来是不想写题解的,但是既然能水一贴,那我还是不放过这个机会了(滑稽).其实贪心算法并不是具体的什么算法,而是一种通过局部最优解来猜测通常情况最优解的,由有限推无限的方法.类似于数学归纳法,但是相对数学归纳法,贪心算法并没有那么严谨.对于一个经常思维江化的人来说(我),几个小时找不出贪心策略是常有的事QAQ顺便数学专题的第一篇暂定为费马小">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-13T15:18:40.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ela&#39;s notes">
-<meta name="twitter:description" content="人生就是一个与困抗争的过程">
+<meta name="twitter:title" content="贪心算法解析">
+<meta name="twitter:description" content="&amp;lt;缓更&amp;gt;没想到这周是贪心算法(说好的最短路呢),本来是不想写题解的,但是既然能水一贴,那我还是不放过这个机会了(滑稽).其实贪心算法并不是具体的什么算法,而是一种通过局部最优解来猜测通常情况最优解的,由有限推无限的方法.类似于数学归纳法,但是相对数学归纳法,贪心算法并没有那么严谨.对于一个经常思维江化的人来说(我),几个小时找不出贪心策略是常有的事QAQ顺便数学专题的第一篇暂定为费马小">
 
 
 
@@ -146,13 +148,13 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-  <link rel="canonical" href="http://elatisy.top/categories/模板/"/>
+  <link rel="canonical" href="http://elatisy.top/posts/effa1578/"/>
 
 
 
 
 
-  <title>分类: 模板 | Ela's notes</title>
+  <title>贪心算法解析 | Ela's notes</title>
   
 
 
@@ -171,7 +173,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/elatisy/elatisy.github.io"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,83 +267,222 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>模板<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://elatisy.top/posts/effa1578/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Elatis">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ela's notes">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/14900/" itemprop="url">
-              
-                <span itemprop="name">Java/C++的高精度算法实现</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">贪心算法解析</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-10T13:21:39+08:00"
-              content="2017-11-10" >
-          11-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T23:06:35+08:00">
+                2017-11-13
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-13T23:18:40+08:00">
+                2017-11-13
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  209
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/45967/" itemprop="url">
-              
-                <span itemprop="name">To submit</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-26T11:42:39+08:00"
-              content="2017-10-26" >
-          10-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>&lt;缓更&gt;<br>没想到这周是贪心算法(说好的最短路呢),本来是不想写题解的,但是既然能水一贴,那我还是不放过这个机会了(滑稽).<br>其实贪心算法并不是具体的什么算法,而是一种通过局部最优解来猜测通常情况最优解的,由有限推无限的方法.<br>类似于数学归纳法,但是相对数学归纳法,贪心算法并没有那么严谨.<br>对于一个经常思维江化的人来说(我),几个小时找不出贪心策略是常有的事QAQ<br>顺便数学专题的第一篇暂定为费马小定理的解析和证明,发布日期为我学会和开始写之后(不放卫星浑身难受)<br>ACO真尼玛好玩!!!<br><a id="more"></a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+  </div>
+  
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/b129499c/" rel="next" title="Windows系统下使用虚拟机运行Linux">
+                <i class="fa fa-chevron-left"></i> Windows系统下使用虚拟机运行Linux
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +490,10 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
           
+
+  
+
+
 
         </div>
         
@@ -641,6 +786,10 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 

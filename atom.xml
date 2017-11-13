@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2017-11-13T08:36:00.823Z</updated>
+  <updated>2017-11-13T15:18:40.197Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>贪心算法解析</title>
+    <link href="http://elatisy.top/posts/effa1578/"/>
+    <id>http://elatisy.top/posts/effa1578/</id>
+    <published>2017-11-13T15:06:35.000Z</published>
+    <updated>2017-11-13T15:18:40.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>&lt;缓更&gt;<br>没想到这周是贪心算法(说好的最短路呢),本来是不想写题解的,但是既然能水一贴,那我还是不放过这个机会了(滑稽).<br>其实贪心算法并不是具体的什么算法,而是一种通过局部最优解来猜测通常情况最优解的,由有限推无限的方法.<br>类似于数学归纳法,但是相对数学归纳法,贪心算法并没有那么严谨.<br>对于一个经常思维江化的人来说(我),几个小时找不出贪心策略是常有的事QAQ<br>顺便数学专题的第一篇暂定为费马小定理的解析和证明,发布日期为我学会和开始写之后(不放卫星浑身难受)<br>ACO真尼玛好玩!!!<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;lt;缓更&amp;gt;&lt;br&gt;没想到这周是贪心算法(说好的最短路呢),本来是不想写题解的,但是既然能水一贴,那我还是不放过这个机会了(滑稽).&lt;br&gt;其实贪心算法并不是具体的什么算法,而是一种通过局部最优解来猜测通常情况最优解的,由有限推无限的方法.&lt;br&gt;类似于数学归纳法,但是相对数学归纳法,贪心算法并没有那么严谨.&lt;br&gt;对于一个经常思维江化的人来说(我),几个小时找不出贪心策略是常有的事QAQ&lt;br&gt;顺便数学专题的第一篇暂定为费马小定理的解析和证明,发布日期为我学会和开始写之后(不放卫星浑身难受)&lt;br&gt;ACO真尼玛好玩!!!&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
+    
+    
+      <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows系统下使用虚拟机运行Linux</title>
