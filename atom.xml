@@ -41,17 +41,13 @@
     <link href="http://elatisy.top/posts/5fed7bce/"/>
     <id>http://elatisy.top/posts/5fed7bce/</id>
     <published>2017-11-11T01:45:59.000Z</published>
-    <updated>2017-11-11T02:48:25.725Z</updated>
+    <updated>2017-11-13T05:34:24.736Z</updated>
     
-    <content type="html"><![CDATA[<p>开坑待编辑<br>“基于next主题的各种配置方法”已不置顶,如需要请往后翻,或点击侧栏”推荐阅读”中的对应超链接<br>想开数学专题但不知道写什么好,暂时咕了先<br>(好像之前有人叫我写map用法的?<br>容我先写完作业!!!!!!!!!!</p>]]></content>
+    <content type="html"><![CDATA[<p>“基于next主题的各种配置方法”已不置顶,如需要请往后翻,或点击侧栏”推荐阅读”中的对应超链接<br>想开数学专题但不知道写什么好,暂时咕了先<br>ACO真尼玛好玩!!!<br><a id="more"></a><br>通常情况下,我们存入一大堆数据用的是数组.但是数组虽然操作简便,但有些操作如果使用数组的话,可能会导致一些麻烦.<br>例如我们想在一堆乱序的整型数组中的某个数和某个数间添加一个元素,由于不知道这两个数的具体位置,只能从头遍历一遍数组找到这两个数,然后将后面的一个数以及其之后的所有元素往后退一位,再把要加入的元素存入空出来的位置.<br>由于是乱序的,所以也不能直接存到末尾然后用sort函数.<br>仅是想想都觉得时间复杂度很高,所以我们需要一种新的数据存储方法,来简化某些对一堆数据的操作.<br>首先我们可以想想,数组是将一堆数据放到一列连续的空间里.而且无论所存入的数据是什么,都不会影响对应的储存空间本身的顺序和属性.这就意味着我们无法清楚每一个元素到底在哪里(默认是乱序的),仅仅知道那一列储存空间是连续的.而且每一个元素实际上并无任何关系.所以我们要知晓里面的元素,只能通过遍历一个个找.<br>所以我们不妨想一个办法来使那一堆元素通过某种对应关系来联系起来.这样我们想要在其中添加或删除元素时,只需要改变其中几个元素之间的对应关系即可.<br>实际上,我们只需要知道每个元素的下一个元素是谁,就可以把整堆的元素串成一列,并且使每个元素有了确切的,唯一的位置关系.<br>如果在数组中,每一个元素在哪是不固定的,例如a数组中有一个5,那么5在a[0],a[1],a[2]…..a[n]都是可能的.而如果我们指定了某个元素的下一个是5,另有某个元素的前一个是5,那么5在这两个元素之间这个事实就可以确定了.<br>对于上面那个例子,假设有5个数字1-5的排序是:35412,那么对于这五个数字,它们形成的链表模型如下图:<br><img src="/posts/5fed7bce/1.png" alt="1.png" title=""><br>要找到某个元素,我们只需要从第一个元素开始,不断查找它的下一个元素即可.<br>还是上面的那个例子,假如我们要找5在第几位,只需先让它从数字1的下一个元素开始找起,不断寻找当前数字的下一个元素,即可找到数字5,代码如下:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="keyword">int</span> next[<span class="number">6</span>]=&#123;<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">4</span>&#125;;<span class="comment">//next[i]代表了数字i的下一个元素是数字几 </span></div><div class="line"><span class="keyword">int</span> t,ans=<span class="number">0</span>;</div><div class="line">t=next[<span class="number">1</span>];</div><div class="line"><span class="keyword">while</span>(t!=<span class="number">5</span>)</div><div class="line">&#123;</div><div class="line">t=next[t];</div><div class="line">ans++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">cout</span>&lt;&lt;ans;<span class="comment">//ans代表了要找的数字排在链表的第几位 </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>运行后输出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">2</div></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;开坑待编辑&lt;br&gt;“基于next主题的各种配置方法”已不置顶,如需要请往后翻,或点击侧栏”推荐阅读”中的对应超链接&lt;br&gt;想开数学专题但不知道写什么好,暂时咕了先&lt;br&gt;(好像之前有人叫我写map用法的?&lt;br&gt;容我先写完作业!!!!!!!!!!&lt;/p&gt;
-
-      
+      &lt;p&gt;“基于next主题的各种配置方法”已不置顶,如需要请往后翻,或点击侧栏”推荐阅读”中的对应超链接&lt;br&gt;想开数学专题但不知道写什么好,暂时咕了先&lt;br&gt;ACO真尼玛好玩!!!&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
