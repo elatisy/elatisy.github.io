@@ -107,18 +107,18 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-<meta name="description" content="开坑待编辑">
+<meta name="description" content="好像一周多都没有更新了..(ACO真是太好玩了)那这次就来讲一下动态规划的算法吧">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Java]约瑟夫环的链表实现">
-<meta property="og:url" content="http://elatisy.top/posts/6d7710fe/index.html">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="http://elatisy.top/posts/a80d0031/index.html">
 <meta property="og:site_name" content="Ela&#39;s notes">
-<meta property="og:description" content="开坑待编辑">
+<meta property="og:description" content="好像一周多都没有更新了..(ACO真是太好玩了)那这次就来讲一下动态规划的算法吧">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T01:37:36.608Z">
+<meta property="og:updated_time" content="2017-11-24T05:41:16.412Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Java]约瑟夫环的链表实现">
-<meta name="twitter:description" content="开坑待编辑">
+<meta name="twitter:title" content="动态规划">
+<meta name="twitter:description" content="好像一周多都没有更新了..(ACO真是太好玩了)那这次就来讲一下动态规划的算法吧">
 
 
 
@@ -148,13 +148,13 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-  <link rel="canonical" href="http://elatisy.top/posts/6d7710fe/"/>
+  <link rel="canonical" href="http://elatisy.top/posts/a80d0031/"/>
 
 
 
 
 
-  <title>[Java]约瑟夫环的链表实现 | Ela's notes</title>
+  <title>动态规划 | Ela's notes</title>
   
 
 
@@ -281,7 +281,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://elatisy.top/posts/6d7710fe/">
+    <link itemprop="mainEntityOfPage" href="http://elatisy.top/posts/a80d0031/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Elatis">
@@ -298,7 +298,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
         
         
-          <h1 class="post-title" itemprop="name headline">[Java]约瑟夫环的链表实现</h1>
+          <h1 class="post-title" itemprop="name headline">动态规划</h1>
         
 
         <div class="post-meta">
@@ -310,8 +310,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T09:36:58+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T12:47:35+08:00">
+                2017-11-24
               </time>
             
 
@@ -326,8 +326,8 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-11-20T09:37:36+08:00">
-                2017-11-20
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-24T13:41:16+08:00">
+                2017-11-24
               </time>
             
           </span>
@@ -343,6 +343,17 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
                 <span class="post-meta-item-text">分类于</span>
               
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/c/" itemprop="url" rel="index">
+                    <span itemprop="name">c++</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Java/" itemprop="url" rel="index">
@@ -376,7 +387,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5
+                  1,205
                 </span>
               
 
@@ -392,7 +403,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -413,7 +424,15 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <p>开坑待编辑</p>
+        <p>好像一周多都没有更新了..(ACO真是太好玩了)<br>那这次就来讲一下动态规划的算法吧<br><a id="more"></a><br>动态规划(Dynamic Programming)是求解决策过程最优化的数学方法,是运筹学的一部分.它使用的是一种分治思想,将一个大问题转换为一些小问题,再将每个小问题都转化为更多的小小问题,直至它们形成一个个不可再分单元,再对每个单元求最优解,再求它们中某些单元组成的单元的最优解,直到求得大问题的最优解.<br>动态规划主要分为四种:<br>1) 线性动归<br>2) 区域动归<br>3) 树状动归<br>4) 背包动归</p>
+<p>但是对于每一种动归,它们的思想是一样的,所以只要掌握了这种思想,理解这几种类型的动归也不是什么难事.而且最短路问题实际上也是用了动归思想.</p>
+<p>动态规划可以广泛地应用在各行各业中,所以不仅是ACMer,不仅是程序员,每个人都应该掌握这种思想.</p>
+<p>那么接下来将讲解每一种动归以及它们的实例.<br>可能有些代码是使用Java写的,但是除了语法不同,其它部分和c++并没有什么区别.</p>
+<h1 id="线性动归"><a href="#线性动归" class="headerlink" title="线性动归"></a>线性动归</h1><p>线性动归是最基础的一种动归,剩下三种动归实际上都是基于它形成的.<br>那么我们首先来看看递归实现的动归(递归比较好理解)<br>以下代码是基于cpp的,以求数列a[n]的最长升序子序列为例<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> a[n+<span class="number">1</span>];                                   <span class="comment">//输入的数存在数组的1~n中        </span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dp</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">bool</span> flag,<span class="keyword">int</span> pre)</span></span>&#123;              <span class="comment">//k为判断当前在处理前几个元素,flag为是否取当前元素的判断,pre为前一个元素的大小</span></div><div class="line">    <span class="keyword">if</span>(k == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;                      <span class="comment">//边界条件,当k在第一个元素之前时没有任何元素,子序列长度只能为0</span></div><div class="line">    <span class="keyword">else</span>&#123;                                     <span class="comment">//以flag为真,就说明我们想取这一个数作为子序列的一部分,当然还要判断能否取 </span></div><div class="line">        <span class="keyword">if</span>(flag &amp;&amp; pre&lt;a[k]) &#123;</div><div class="line">                                               <span class="comment">//对于每一种操作,不仅要执行对应的操作,返回值的时候还要选出前一层递归的最优解.</span></div><div class="line">                pre=a[k];                      <span class="comment">//更新子序列中前一个数的大小</span></div><div class="line">                <span class="keyword">return</span> max(dp(k<span class="number">-1</span>,<span class="literal">false</span>,pre),dp(k<span class="number">-1</span>,<span class="literal">true</span>,pre))+<span class="number">1</span>;</div><div class="line">            &#125;                    </div><div class="line">        <span class="keyword">else</span>&#123;                                  <span class="comment">//选择不取当前元素</span></div><div class="line">            <span class="keyword">return</span> max(dp(k<span class="number">-1</span>,<span class="literal">true</span>),dp(k<span class="number">-1</span>,<span class="literal">false</span>));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当我们输入要求的数据,用<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max(dp(n,<span class="literal">false</span>,<span class="number">-1</span>),dp(n,<span class="literal">true</span>,<span class="number">-1</span>));</div></pre></td></tr></table></figure></p>
+<p>调用上面的函数的时候,就可以求出最长升序子序列的长度.</p>
+<p>但其实使用递归来实现的动归的时间复杂度是很高的,对于大量数据的动归,使用递归来实现是肯定会超时的.所以还有一种实现方法是使用循环,它可以把时间复杂度控制在n^2之内.<br>与使用递归不同,这种方法会将每个小问题的最优解记录下来,对于线性动归,就是把前k个元素的最优解记录下来.如果最优解是一个数据,我们可以使用一个数组来实现,通常叫做dp;其中dp[k]是前k个元素的最优解.<br>当我们执行完操作后,dp[n]即为我们要求的问题的最优解.<br>还是以求n个数的数列的最长升序子序列为例<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> a[n+<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> dp[n+<span class="number">1</span>]=&#123;<span class="number">0</span>&#125;;</div><div class="line">    dp[<span class="number">1</span>]=<span class="number">1</span>;                <span class="comment">//只有一个元素时取那一个元素肯定是最优解</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;      <span class="comment">//遍历求得前1~n个元素的最优解</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;++j)&#123;  <span class="comment">//求前i个元素的最优解</span></div><div class="line">        <span class="keyword">if</span>(a[i]&gt;a[j])       <span class="comment">//判断是否符合升序条件</span></div><div class="line">            dp[j]=max(dp[j],dp[j<span class="number">-1</span>]+<span class="number">1</span>);</div><div class="line">        <span class="keyword">else</span> dp[j]=dp[j<span class="number">-1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>循环完之后,我们只需要输出dp[n]即可获得最优解.<br>那么上面那个程序中,为什么我们只需要判断当前的元素a[i]和它之前的某一个元素a[j]的大小,就能使它满足条件了呢?<br>那是因为dp数组中的每一个元素存的都是符合条件的最优解,当它判断第二个元素时,已经将第一个和第二个元素比较好了,并且最优解已经储存进了dp[2],以此类推,第三个元素已经和第一,第二个元素比较好了,到第i个元素时,自然只需要让它比较它前面的元素就能使子序列满足升序的条件.</p>
 
       
     </div>
@@ -514,8 +533,17 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -614,6 +642,22 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性动归"><span class="nav-number">1.</span> <span class="nav-text">线性动归</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -645,7 +689,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.3k字</span>
+  <span class="post-count">博客全站共31.5k字</span>
 </div>
 
 <!-- 
