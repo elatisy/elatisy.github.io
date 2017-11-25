@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2017-11-25T01:57:36.948Z</updated>
+  <updated>2017-11-25T02:00:58.310Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://elatisy.top/posts/4caeeee0/"/>
     <id>http://elatisy.top/posts/4caeeee0/</id>
     <published>2017-11-25T01:50:49.000Z</published>
-    <updated>2017-11-25T01:57:36.948Z</updated>
+    <updated>2017-11-25T02:00:58.310Z</updated>
     
-    <content type="html"><![CDATA[<p>JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.<br><img src="/posts/undefined/0.jpg" alt="0.jpg" title=""><br><a id="more"></a></p><h1 id="JFrame窗体的引用"><a href="#JFrame窗体的引用" class="headerlink" title="JFrame窗体的引用"></a>JFrame窗体的引用</h1><p>JFrame类已由Java开发环境集成,所以我们可以直接使用extends语句直接继承一个JFrame窗体.</p>]]></content>
+    <content type="html"><![CDATA[<p>JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.<br><img src="/posts/4caeeee0/0.jpg" alt="0.jpg" title=""><br><a id="more"></a></p><h1 id="JFrame窗体的引用"><a href="#JFrame窗体的引用" class="headerlink" title="JFrame窗体的引用"></a>JFrame窗体的引用</h1><p>JFrame类已由Java开发环境集成,所以我们可以直接使用extends语句直接继承一个JFrame窗体.</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.&lt;br&gt;&lt;img src=&quot;/posts/undefined/0.jpg&quot; alt=&quot;0.jpg&quot; title=&quot;&quot;&gt;&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.&lt;br&gt;&lt;img src=&quot;/posts/4caeeee0/0.jpg&quot; alt=&quot;0.jpg&quot; title=&quot;&quot;&gt;&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -51,9 +51,9 @@
     
     </summary>
     
-      <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
-    
       <category term="c++" scheme="http://elatisy.top/categories/c/"/>
+    
+      <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
     
     
       <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
@@ -139,16 +139,16 @@
     
     </summary>
     
-      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
+      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
       <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
     
-      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
+      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
     
-    
-      <category term="算法模板" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法模板" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
