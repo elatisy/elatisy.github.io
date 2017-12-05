@@ -107,18 +107,18 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
 
 
 
-<meta name="description" content="JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.">
+<meta name="description" content="JFrame窗体是一个功能强大的,能在各个平台上完美兼容的&amp;quot;轻量级窗体&amp;quot;,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.  &amp;lt;!--more--&amp;gt; 当然,我们得先引用swing包: 1import javax.swing.*; JFrame窗体的引用 JFrame类已由swing包集成,所以我们可以直接使用extends语句直接继承一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Java]JFrame窗体的各种配置方法">
 <meta property="og:url" content="http://elatisy.top/posts/4caeeee0/index.html">
 <meta property="og:site_name" content="Ela&#39;s notes">
-<meta property="og:description" content="JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.">
+<meta property="og:description" content="JFrame窗体是一个功能强大的,能在各个平台上完美兼容的&amp;quot;轻量级窗体&amp;quot;,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.  &amp;lt;!--more--&amp;gt; 当然,我们得先引用swing包: 1import javax.swing.*; JFrame窗体的引用 JFrame类已由swing包集成,所以我们可以直接使用extends语句直接继承一">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://elatisy.top/posts/4caeeee0/0.jpg">
 <meta property="og:updated_time" content="2017-11-25T03:22:49.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Java]JFrame窗体的各种配置方法">
-<meta name="twitter:description" content="JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.">
+<meta name="twitter:description" content="JFrame窗体是一个功能强大的,能在各个平台上完美兼容的&amp;quot;轻量级窗体&amp;quot;,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.  &amp;lt;!--more--&amp;gt; 当然,我们得先引用swing包: 1import javax.swing.*; JFrame窗体的引用 JFrame类已由swing包集成,所以我们可以直接使用extends语句直接继承一">
 <meta name="twitter:image" content="http://elatisy.top/posts/4caeeee0/0.jpg">
 
 
@@ -377,7 +377,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  271
+                  272
                 </span>
               
 
@@ -414,11 +414,22 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
       
 
       
-        <p>JFrame窗体是一个功能强大的,能在各个平台上完美兼容的”轻量级窗体”,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.<br><img src="/posts/4caeeee0/0.jpg" alt="0.jpg" title=""><br><a id="more"></a><br>当然,我们得先引用swing包:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> javax.swing.*;</div></pre></td></tr></table></figure></p>
-<h1 id="JFrame窗体的引用"><a href="#JFrame窗体的引用" class="headerlink" title="JFrame窗体的引用"></a>JFrame窗体的引用</h1><p>JFrame类已由swing包集成,所以我们可以直接使用extends语句直接继承一个JFrame窗体.<br>就是这样写:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainFrame</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</div></pre></td></tr></table></figure></p>
-<p>就是在主类后面加上一句”extends JFrame”;<br>继承了JFrame类之后,要新建一个窗体,只需将主方法这样写:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">new</span> MainFrame();</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
-<p>就新建了一个MainFrame窗体,又因为MainFrame窗体实际上是继承了JFrame窗体,所以这样操作就是新建了一个JFrame窗体.<br>接下来我们就要逐步将我们新建的窗体配置成我们想要的样子.</p>
-<p>首先我们先在主类下面写上<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span>  <span class="title">MainFrame</span><span class="params">()</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>JFrame窗体是一个功能强大的,能在各个平台上完美兼容的&quot;轻量级窗体&quot;,也是Java程序设计的基础.本篇将在我学习使用JFrame窗体的同时持续更新.
+<img src="/posts/4caeeee0/0.jpg" alt="0.jpg" title="">
+&lt;!--more--&gt;
+当然,我们得先引用swing包:
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> javax.swing.*;</div></pre></td></tr></table></figure></p>
+<h1>JFrame窗体的引用</h1>
+<p>JFrame类已由swing包集成,所以我们可以直接使用extends语句直接继承一个JFrame窗体.
+就是这样写:
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainFrame</span> <span class="keyword">extends</span> <span class="title">JFrame</span></span>&#123;</div></pre></td></tr></table></figure></p>
+<p>就是在主类后面加上一句&quot;extends JFrame&quot;;
+继承了JFrame类之后,要新建一个窗体,只需将主方法这样写:
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="keyword">new</span> MainFrame();</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>就新建了一个MainFrame窗体,又因为MainFrame窗体实际上是继承了JFrame窗体,所以这样操作就是新建了一个JFrame窗体.
+接下来我们就要逐步将我们新建的窗体配置成我们想要的样子.</p>
+<p>首先我们先在主类下面写上
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span>  <span class="title">MainFrame</span><span class="params">()</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>接下来的步骤除了特殊说明,都是在这个窗体的大括号里面进行的.</p>
 
       
@@ -558,7 +569,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -636,7 +647,7 @@ color="255,255,255" opacity='0' zIndex="-2" count="99" src="//cdn.bootcss.com/ca
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JFrame窗体的引用"><span class="nav-number">1.</span> <span class="nav-text">JFrame窗体的引用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">JFrame窗体的引用</span></a></li></ol></div>
             
 
           </div>
