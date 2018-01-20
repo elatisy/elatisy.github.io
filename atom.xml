@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2018-01-12T07:23:32.442Z</updated>
+  <updated>2017-12-05T10:10:08.300Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>[公告]</title>
-    <link href="http://elatisy.top/posts/e9a70f0/"/>
-    <id>http://elatisy.top/posts/e9a70f0/</id>
-    <published>2017-12-04T14:45:59.000Z</published>
-    <updated>2018-01-12T07:23:32.442Z</updated>
-    
-    <content type="html"><![CDATA[<p>考完了考完了考完了就剩一门英语了<br>好想要一个.cn的域名好想要一个.cn的域名好想要一个.cn的域名可是我又不舍得现在这个域名<br>我怎么那么菜啊,考啥啥挂.<br><del>Elatis的自救计划开始了,博客暂时断更到放寒假QAQ</del>计划失败了<br>顺便最近博客出现了一些critical error,”阅读全文”标签有时候无法正确渲染,会导致文章直接在主页全部显示,非常难看,如果出现这个问题请联系我.<br>手痒写了一些小东西,等寒假时陆续上传#(滑稽)<br><img src="/posts/e9a70f0/0.jpg" alt="0.jpg" title=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;考完了考完了考完了就剩一门英语了&lt;br&gt;好想要一个.cn的域名好想要一个.cn的域名好想要一个.cn的域名可是我又不舍得现在这个域名&lt;br&gt;我怎么那么菜啊,考啥啥挂.&lt;br&gt;&lt;del&gt;Elatis的自救计划开始了,博客暂时断更到放寒假QAQ&lt;/del&gt;计划失败了&lt;br&gt;顺便
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>模运算法则及应用</title>
@@ -52,9 +31,9 @@
     
     </summary>
     
-      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
-    
       <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
+    
+      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
       <category term="数学" scheme="http://elatisy.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
@@ -98,9 +77,9 @@
     
     </summary>
     
-      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
-    
       <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
+    
+      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
     
       <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
@@ -186,16 +165,16 @@
     
     </summary>
     
-      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
+      <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
     
       <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
-      <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
+      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
     
-    
-      <category term="算法模板" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="算法模板" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
     
   </entry>
   
@@ -451,6 +430,27 @@
       
       
         &lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://elatisy.top/posts/16107/"/>
+    <id>http://elatisy.top/posts/16107/</id>
+    <published>2017-10-23T14:03:25.969Z</published>
+    <updated>2017-11-11T02:10:00.352Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
       
     
     </summary>
