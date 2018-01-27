@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..) 顺便我的双系统还是没装好,爱慕安戈瑞. &amp;lt;!--more--&amp;gt; 准备工作 在写对拍程序前需要准备好三份程序:  你写的程序 从网上找的AC程序,或是你写的虽然很慢但是保证正确的程序 能随机生成出你写的题的输入数据的程序  前两个我就不再多说,接下来讲讲第三个程序怎么写 首先我们先明确,随机生成">
+<meta name="description" content="最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..)顺便我的双系统还是没装好,爱慕安戈瑞.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对拍程序的制作">
 <meta property="og:url" content="http://elatisy.top/posts/28884/index.html">
 <meta property="og:site_name" content="Ela&#39;s notes">
-<meta property="og:description" content="最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..) 顺便我的双系统还是没装好,爱慕安戈瑞. &amp;lt;!--more--&amp;gt; 准备工作 在写对拍程序前需要准备好三份程序:  你写的程序 从网上找的AC程序,或是你写的虽然很慢但是保证正确的程序 能随机生成出你写的题的输入数据的程序  前两个我就不再多说,接下来讲讲第三个程序怎么写 首先我们先明确,随机生成">
+<meta property="og:description" content="最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..)顺便我的双系统还是没装好,爱慕安戈瑞.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://elatisy.top/posts/28884/对拍示例.png">
 <meta property="og:updated_time" content="2017-11-11T02:10:00.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对拍程序的制作">
-<meta name="twitter:description" content="最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..) 顺便我的双系统还是没装好,爱慕安戈瑞. &amp;lt;!--more--&amp;gt; 准备工作 在写对拍程序前需要准备好三份程序:  你写的程序 从网上找的AC程序,或是你写的虽然很慢但是保证正确的程序 能随机生成出你写的题的输入数据的程序  前两个我就不再多说,接下来讲讲第三个程序怎么写 首先我们先明确,随机生成">
+<meta name="twitter:description" content="最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..)顺便我的双系统还是没装好,爱慕安戈瑞.">
 <meta name="twitter:image" content="http://elatisy.top/posts/28884/对拍示例.png">
 
 
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,016
+                  1,015
                 </span>
               
 
@@ -420,48 +420,20 @@
       
 
       
-        <p>最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..)
-顺便我的双系统还是没装好,爱慕安戈瑞.
-&lt;!--more--&gt;</p>
-<h1>准备工作</h1>
-<p>在写对拍程序前需要准备好三份程序:</p>
-<ol>
-<li>你写的程序</li>
-<li>从网上找的AC程序,或是你写的虽然很慢但是保证正确的程序</li>
-<li>能随机生成出你写的题的输入数据的程序</li>
-</ol>
-<p>前两个我就不再多说,接下来讲讲第三个程序怎么写
-首先我们先明确,随机生成数据的程序要有以下几个功能:</p>
-<ol>
-<li>保证生成的数据是随机的</li>
-<li>保证生成的数据是合法的(不超过题目范围)</li>
-</ol>
-<p>两个条件都好解决,只需要使用stdlib头文件里的srand和rand函数,同时配合time函数即可
-下面这个代码是以生成两个数的数据为例
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;//万用头文件,大部分判题系统不支持,要上交的代码最好别用</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a,b;</div><div class="line">    srand(time(<span class="number">0</span>));<span class="comment">//time(0)能返回从1970.01.01至今过的秒数,用以控制伪随机函数</span></div><div class="line">    a=rand();</div><div class="line">    b=rand();</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">" "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <p>最近到一题实在de不出bug,于是去学习了如何制作对拍程序(后来那题发现是我选错语言了..)<br>顺便我的双系统还是没装好,爱慕安戈瑞.<br><a id="more"></a></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>在写对拍程序前需要准备好三份程序:<br>1) 你写的程序<br>2) 从网上找的AC程序,或是你写的虽然很慢但是保证正确的程序<br>3) 能随机生成出你写的题的输入数据的程序</p>
+<p>前两个我就不再多说,接下来讲讲第三个程序怎么写<br>首先我们先明确,随机生成数据的程序要有以下几个功能:<br>1) 保证生成的数据是随机的<br>2) 保证生成的数据是合法的(不超过题目范围)</p>
+<p>两个条件都好解决,只需要使用stdlib头文件里的srand和rand函数,同时配合time函数即可<br>下面这个代码是以生成两个数的数据为例<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;//万用头文件,大部分判题系统不支持,要上交的代码最好别用</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a,b;</div><div class="line">    srand(time(<span class="number">0</span>));<span class="comment">//time(0)能返回从1970.01.01至今过的秒数,用以控制伪随机函数</span></div><div class="line">    a=rand();</div><div class="line">    b=rand();</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">" "</span>&lt;&lt;b&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>运行这个程序就能随机生成两个数</p>
-<p>如果我们要生成在某个范围内的两个数呢?比如我们需要生成100以内的数
-只需在
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=rand();</div><div class="line">b=rand();</div></pre></td></tr></table></figure></p>
-<p>后分别添加%(100+1),使其变成
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=rand()%(<span class="number">100</span>+<span class="number">1</span>);</div><div class="line">b=rand()%(<span class="number">100</span>+<span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>如果我们要生成在某个范围内的两个数呢?比如我们需要生成100以内的数<br>只需在<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=rand();</div><div class="line">b=rand();</div></pre></td></tr></table></figure></p>
+<p>后分别添加%(100+1),使其变成<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a=rand()%(<span class="number">100</span>+<span class="number">1</span>);</div><div class="line">b=rand()%(<span class="number">100</span>+<span class="number">1</span>);</div></pre></td></tr></table></figure></p>
 <p>就完成了其范围的限定.</p>
-<p>然后我们再来看看如何让它实现对拍的功能.在以上三个程序的同一级目录中创建一个文本文档,在里面写上
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off	//使命令不输出,防止刷屏</div><div class="line"></div><div class="line">:loop	//程序循环之用  </div><div class="line">    rand.exe &gt; data.<span class="keyword">in</span>	//运行rand.exe,并将其输出储存到data.<span class="keyword">in</span>,若没有data.<span class="keyword">in</span>会自动创建</div><div class="line">    std.exe &lt; data.<span class="keyword">in</span> &gt; std.out	//运行std.exe,将data.<span class="keyword">in</span>的数据输入,并将其输出存入std.out,没有会自动创建</div><div class="line">    my.exe &lt; data.<span class="keyword">in</span> &gt; my.out	//同上</div><div class="line">    fc my.out std.out //比较两个文件</div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">errorlevel</span> <span class="number">1</span> <span class="keyword">goto</span> loop	//如果没有异常就返回到"loop"那行继续运行</div><div class="line"><span class="built_in">pause</span>	//如果有异常就暂停,给你看数据</div><div class="line"><span class="keyword">goto</span> loop	//解除暂停后继续循环</div></pre></td></tr></table></figure></p>
-<p>复制后记得把注释去掉,然后保存,将后缀名改为.bat
-若你写的无误,双击运行.bat文件后应该是这样的
-<img src="/posts/28884/对拍示例.png" alt="对拍示例.png" title="">
-一个最基本的对拍程序就完成了.</p>
-<p>当然我们还有个问题,那就是我们控制伪随机数用的是time(0),这也就意味着每秒才能产生一组不同的数据,效率有些低.还好cmd有自带的随机数命令(%random%),它能产生一个真正随机的数,所以我们只需要将它输入产生随机数据的程序就行了.
-首先我们要把产生随机数据的代码改改,还是以随机生成两个数为例
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//本代码的核心部分来自:http://blog.csdn.net/wlx65003/article/details/51149196</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> random(a,b) ((a)+rand()%((b)-(a)+1))<span class="comment">//能产生范围为a到b的随机数</span></span></div><div class="line"></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[] )</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> seed=time(<span class="literal">NULL</span>);</div><div class="line">    <span class="keyword">if</span>(argc)<span class="comment">//如果有参数</span></div><div class="line">    &#123;</div><div class="line">        ss.clear();</div><div class="line">        ss&lt;&lt;argv[<span class="number">1</span>];</div><div class="line">        ss&gt;&gt;seed;<span class="comment">//把参数转换成整数赋值给seed</span></div><div class="line">    &#125;</div><div class="line">    srand(seed);</div><div class="line">    <span class="keyword">int</span> x,y;</div><div class="line">    x=random(<span class="number">0</span>,<span class="number">100000</span>);</div><div class="line">    y=random(<span class="number">0</span>,<span class="number">100000</span>);</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="string">" "</span>&lt;&lt;y;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接下来改动.bat文件:
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line"></div><div class="line">:loop  </div><div class="line">    rand.exe <span class="variable">%random%</span> &gt; data.<span class="keyword">in</span></div><div class="line">    std.exe &lt; data.<span class="keyword">in</span> &gt; std.out</div><div class="line">    my.exe &lt; data.<span class="keyword">in</span> &gt; my.out</div><div class="line">    fc my.out std.out</div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">errorlevel</span> <span class="number">1</span> <span class="keyword">goto</span> loop</div><div class="line"><span class="built_in">pause</span></div><div class="line"><span class="keyword">goto</span> loop</div></pre></td></tr></table></figure></p>
-<p>也就是在rand.exe后面加了个%random%让系统生成一个随机数并让其作为rand.exe程序的参数来调用它.
-保存后再次双击.bat文件,应该可以感受到数据的生成明显快了很多.
-以上就是对拍程序的写法啦.</p>
-<p>参考资料:
-http://blog.csdn.net/wlx65003/article/details/51149196</p>
+<p>然后我们再来看看如何让它实现对拍的功能.在以上三个程序的同一级目录中创建一个文本文档,在里面写上<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off	//使命令不输出,防止刷屏</div><div class="line"></div><div class="line">:loop	//程序循环之用  </div><div class="line">    rand.exe &gt; data.<span class="keyword">in</span>	//运行rand.exe,并将其输出储存到data.<span class="keyword">in</span>,若没有data.<span class="keyword">in</span>会自动创建</div><div class="line">    std.exe &lt; data.<span class="keyword">in</span> &gt; std.out	//运行std.exe,将data.<span class="keyword">in</span>的数据输入,并将其输出存入std.out,没有会自动创建</div><div class="line">    my.exe &lt; data.<span class="keyword">in</span> &gt; my.out	//同上</div><div class="line">    fc my.out std.out //比较两个文件</div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">errorlevel</span> <span class="number">1</span> <span class="keyword">goto</span> loop	//如果没有异常就返回到"loop"那行继续运行</div><div class="line"><span class="built_in">pause</span>	//如果有异常就暂停,给你看数据</div><div class="line"><span class="keyword">goto</span> loop	//解除暂停后继续循环</div></pre></td></tr></table></figure></p>
+<p>复制后记得把注释去掉,然后保存,将后缀名改为.bat<br>若你写的无误,双击运行.bat文件后应该是这样的<br><img src="/posts/28884/对拍示例.png" alt="对拍示例.png" title=""><br>一个最基本的对拍程序就完成了.</p>
+<p>当然我们还有个问题,那就是我们控制伪随机数用的是time(0),这也就意味着每秒才能产生一组不同的数据,效率有些低.还好cmd有自带的随机数命令(%random%),它能产生一个真正随机的数,所以我们只需要将它输入产生随机数据的程序就行了.<br>首先我们要把产生随机数据的代码改改,还是以随机生成两个数为例<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//本代码的核心部分来自:http://blog.csdn.net/wlx65003/article/details/51149196</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> random(a,b) ((a)+rand()%((b)-(a)+1))<span class="comment">//能产生范围为a到b的随机数</span></span></div><div class="line"></div><div class="line"><span class="built_in">stringstream</span> ss;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( <span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[] )</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> seed=time(<span class="literal">NULL</span>);</div><div class="line">    <span class="keyword">if</span>(argc)<span class="comment">//如果有参数</span></div><div class="line">    &#123;</div><div class="line">        ss.clear();</div><div class="line">        ss&lt;&lt;argv[<span class="number">1</span>];</div><div class="line">        ss&gt;&gt;seed;<span class="comment">//把参数转换成整数赋值给seed</span></div><div class="line">    &#125;</div><div class="line">    srand(seed);</div><div class="line">    <span class="keyword">int</span> x,y;</div><div class="line">    x=random(<span class="number">0</span>,<span class="number">100000</span>);</div><div class="line">    y=random(<span class="number">0</span>,<span class="number">100000</span>);</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="string">" "</span>&lt;&lt;y;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来改动.bat文件:<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line"></div><div class="line">:loop  </div><div class="line">    rand.exe <span class="variable">%random%</span> &gt; data.<span class="keyword">in</span></div><div class="line">    std.exe &lt; data.<span class="keyword">in</span> &gt; std.out</div><div class="line">    my.exe &lt; data.<span class="keyword">in</span> &gt; my.out</div><div class="line">    fc my.out std.out</div><div class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">errorlevel</span> <span class="number">1</span> <span class="keyword">goto</span> loop</div><div class="line"><span class="built_in">pause</span></div><div class="line"><span class="keyword">goto</span> loop</div></pre></td></tr></table></figure></p>
+<p>也就是在rand.exe后面加了个%random%让系统生成一个随机数并让其作为rand.exe程序的参数来调用它.<br>保存后再次双击.bat文件,应该可以感受到数据的生成明显快了很多.<br>以上就是对拍程序的写法啦.</p>
+<p>参考资料:<br><a href="http://blog.csdn.net/wlx65003/article/details/51149196" target="_blank" rel="external">http://blog.csdn.net/wlx65003/article/details/51149196</a></p>
 
       
     </div>
@@ -686,7 +658,7 @@ http://blog.csdn.net/wlx65003/article/details/51149196</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li></ol></div>
             
 
           </div>
@@ -724,7 +696,7 @@ http://blog.csdn.net/wlx65003/article/details/51149196</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共34.8k字</span>
+  <span class="post-count">博客全站共34.7k字</span>
 </div>
 
 <!-- 
