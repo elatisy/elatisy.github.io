@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2018-01-29T09:57:07.933Z</updated>
+  <updated>2018-01-29T10:34:06.310Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://elatisy.top/posts/8e912cf0/"/>
     <id>http://elatisy.top/posts/8e912cf0/</id>
     <published>2018-01-25T13:59:11.000Z</published>
-    <updated>2018-01-29T09:57:07.933Z</updated>
+    <updated>2018-01-29T10:34:06.310Z</updated>
     
-    <content type="html"><![CDATA[<p>博客已加上热度统计,因为next集成了leancloud,所以设置起来还蛮简单的,等有空我就在<a href="http://elatisy.top/posts/15569/">博客美化</a>这篇文章中更新<br>关于一个星期以来的假期刷题体验:<br>首先我想说的是:pat的题好恶心!<br>其次我想说的是:pat的题好恶心!<br>还有一点我想说的是:pat的题好恶心!<br>重要的事情说三遍.<br>不是难,就是恶心,绕来绕去的问题,模糊不清的题意,一定要卡你输出格式等等….<br>有点怀念考算法的竞赛题了<br>技术部这个星期布置的任务是学习html/css的基础知识<span style="background-color: #252525; color: #252525;">其实我是最后两天死亡冲刺的</span><br>学了html<span style="background-color: #252525; color: #252525;">的一点皮毛</span>,我也可以修改一些我搭建博客时无法修改的细节了.<br><span style="background-color: #252525; color: #252525;">以前不懂html/css和js的时候各种乱改代码搭博客实在是太不容易了</span><br>好像跑远了,本篇我会在自己继续学习html的同时,记录分享一下自己学html过程中找到的一些技巧以及小知识等.<br>希望以后我能像学长一样完全自己搭一个博客出来而不用别人的脚本QAQ<br><img src="/posts/8e912cf0/zhenlou.png" alt="zhenlou.png" title=""><br><a id="more"></a><br> 还没开始写呢,上面那段话是半夜等虚拟姬下载东西的时候写的<br> 不要急#(滑稽)</p><p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: '页面 ID', // 可选。默认为 location.href  owner: 'elatisy',  repo: 'comments',  oauth: {    client_id: '1030f08ab3dad20a7e65',    client_secret: 'ad4d25df08c50e01973bbb09f301493711974a6a',  },})gitment.render('container')</script>]]></content>
+    <content type="html"><![CDATA[<p>博客已加上热度统计,因为next集成了leancloud,所以设置起来还蛮简单的,等有空我就在<a href="http://elatisy.top/posts/15569/">博客美化</a>这篇文章中更新<br>关于一个星期以来的假期刷题体验:<br>首先我想说的是:pat的题好恶心!<br>其次我想说的是:pat的题好恶心!<br>还有一点我想说的是:pat的题好恶心!<br>重要的事情说三遍.<br>不是难,就是恶心,绕来绕去的问题,模糊不清的题意,一定要卡你输出格式等等….<br>有点怀念考算法的竞赛题了<br>技术部这个星期布置的任务是学习html/css的基础知识<span style="background-color: #252525; color: #252525;">其实我是最后两天死亡冲刺的</span><br>学了html<span style="background-color: #252525; color: #252525;">的一点皮毛</span>,我也可以修改一些我搭建博客时无法修改的细节了.<br><span style="background-color: #252525; color: #252525;">以前不懂html/css和js的时候各种乱改代码搭博客实在是太不容易了</span><br>好像跑远了,本篇我会在自己继续学习html的同时,记录分享一下自己学html过程中找到的一些技巧以及小知识等.<br>希望以后我能像学长一样完全自己搭一个博客出来而不用别人的脚本QAQ<br><img src="/posts/8e912cf0/zhenlou.png" alt="zhenlou.png" title=""><br><a id="more"></a><br> 还没开始写呢,上面那段话是半夜等虚拟姬下载东西的时候写的<br> 不要急#(滑稽)</p><p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: 'html初体验',  owner: 'elatisy',  repo: 'comments',  oauth: {    client_id: '1030f08ab3dad20a7e65',    client_secret: 'ad4d25df08c50e01973bbb09f301493711974a6a',  },})gitment.render('container')</script>]]></content>
     
     <summary type="html">
     
@@ -203,16 +203,16 @@
     
     </summary>
     
+      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
       <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
       <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
     
-      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
-    
-      <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="算法模板" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
