@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2018-01-30T09:04:07.439Z</updated>
+  <updated>2018-01-30T09:08:24.914Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://elatisy.top/posts/289c2251/"/>
     <id>http://elatisy.top/posts/289c2251/</id>
     <published>2018-01-30T08:57:19.000Z</published>
-    <updated>2018-01-30T09:04:07.439Z</updated>
+    <updated>2018-01-30T09:08:24.914Z</updated>
     
-    <content type="html"><![CDATA[<p>用于存放搜索时找到的各种<span style="background-color:#252525;color:#252525; ">我目前还看不懂的</span>文章,以备以后<span style="background-color:#252525;color:#252525; ">看得懂时</span>再看<br><a id="more"></a><br>在博客中添加<del> 老婆 </del>live2d模型:<br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="external">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br><a href="https://www.ohyhello.com/530/" target="_blank" rel="external">https://www.ohyhello.com/530/</a></p><p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: '先码着以后看',  owner: 'elatisy',  repo: 'comments',  oauth: {    client_id: '1030f08ab3dad20a7e65',    client_secret: 'ad4d25df08c50e01973bbb09f301493711974a6a',  },})gitment.render('container')</script>]]></content>
+    <content type="html"><![CDATA[<p>用于存放搜索时找到的各种<span style="background-color:#252525;color:#252525; ">我目前还看不懂的</span>文章,以备以后<span style="background-color:#252525;color:#252525; ">看得懂时</span>再看<br><a id="more"></a><br>在博客中添加<del> 老婆 </del>live2d模型:<br><a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02" target="_blank" rel="external">给博客添加能动的看板娘(Live2D)-将其添加到网页上吧</a><br><a href="https://www.ohyhello.com/530/" target="_blank" rel="external">如何给自己的博客添加一个萌萌的看板娘！live2d</a></p><p><div id="container"></div></p><p><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"></p><script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script><script>var gitment = new Gitment({  id: '先码着以后看',  owner: 'elatisy',  repo: 'comments',  oauth: {    client_id: '1030f08ab3dad20a7e65',    client_secret: 'ad4d25df08c50e01973bbb09f301493711974a6a',  },})gitment.render('container')</script>]]></content>
     
     <summary type="html">
     
@@ -243,9 +243,9 @@
     
       <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
-      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
-    
       <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
+    
+      <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
     
     
       <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
