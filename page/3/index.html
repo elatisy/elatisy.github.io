@@ -421,7 +421,7 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4,109
+                  4,103
                 </span>
               
 
@@ -459,237 +459,15 @@ const loadScript = function loadScript(c,b){var a=document.createElement("script
 
       
         
-          
-            <p>经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ
-不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)
-所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.
-如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.
-当然我也有一些想要弄的却没弄出来的操作,待我学会后会补上.</p>
-<p>2017.11.08更新:文章置顶以及在主页的排版顺序
-2017.11.11光棍节更新:重设文章的url
-<img src="/posts/15569/zhenlou.jpg" alt="zhenlou.jpg" title="">
-&lt;!-- more --&gt;</p>
-<h1>几点方便操作的建议</h1>
-<p>1.上传至GitHub的时候可以使用如下语句:
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure></p>
-<p>直接完成清除静态文件,重新生成静态文件,上传三个操作
-2.由于改动上传至GitHub后会略微有延迟,推荐先使用
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure></p>
-<p>开启本地预览来看看你的改动是否和你心意,改好后再上传
-3.<strong>特别提醒</strong>文章的.md文件用记事本编辑的话记得将其保存为UTF-8编码,否则中文会变成乱码,即使你的博客界面为中文.</p>
-<h1>前期准备工作</h1>
-<h2>博客的搭建</h2>
-<p>本篇介绍的是博客的美化,关于如何去搭建博客,可以参考一下<a href="https://rivercome.github.io/" target="_blank" rel="external">学长的教程</a>
-当然也可以来询问我
-有一点要补充的是:<strong>GitHub账号名最好用小写英文</strong>,我的第一个GitHub账号有大写字母,导致了一些奇奇怪怪的bug..
-还有一点就是:<strong>定期备份</strong>,免得误操作导致博客崩了,却无法恢复.</p>
-<h1>博客/主题下的_config.yml的各种设置</h1>
-<p>这里讲的是主要在_config.yml中进行的设置,并不代表之后的设置不需要用到_config.yml
-&lt;font size=5 &gt;&lt;center&gt;<strong>还是建议先备份</strong>&lt;/center&gt;&lt;/font&gt;</p>
-<h2>编辑器的选择</h2>
-<p>要对yml进行编辑,首先当然要选择一个编辑器.直接用记事本没有高亮,看着非常难受.
-我本人使用的是VS Code,当然只要是支持yaml的都可以.</p>
-<h2>themes\next下的_config.yml的设置</h2>
-<h3>切换主题方案(Scheme)</h3>
-<p>在主题下的_config.yml文件中找到(可使用编辑器的搜索功能)
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"><span class="comment"># Scheme Settings</span></div><div class="line"><span class="comment"># ---------------------------------------------------------------</span></div><div class="line"></div><div class="line"><span class="comment"># Schemes</span></div><div class="line"><span class="comment">#scheme: Muse</span></div><div class="line"><span class="comment">#scheme: Mist</span></div><div class="line"><span class="comment">#scheme: Pisces</span></div><div class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></div></pre></td></tr></table></figure></p>
-<p>将上面四种风格的方案的某一个之前的#号去掉即可启用该风格的方案.
-我用的Gemini,是可塑性较强的一种风格.</p>
-<h3>博客图标的设置</h3>
-<p>在主题下的_config.yml文件中找到
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">favicon:</span></div><div class="line"><span class="attr">  small:</span> <span class="string">/images/favicon-16x16-next.png</span></div><div class="line"><span class="attr">  medium:</span> <span class="string">/images/favicon-32x32-next.png</span></div><div class="line"><span class="attr">  apple_touch_icon:</span> <span class="string">/images/apple-touch-icon-next.png</span></div><div class="line"><span class="attr">  safari_pinned_tab:</span> <span class="string">/images/logo.svg</span></div><div class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></div><div class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></div></pre></td></tr></table></figure></p>
-<p>将themes\next\source\images下的对应名字的图片替换即可.注意文件类型要相同(我用教程上的方法不行QAQ)
-完成示例:<img src="/posts/15569/博客图标更改.png" alt="博客图标更改.png" title=""></p>
-<h3>添加博主头像</h3>
-<p>同理,在themes\next\source\images文件夹中放入你想要的图片,改名avatar.后缀名
-在next主题下的_config.yml中,找到
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Sidebar Avatar</span></div><div class="line"><span class="comment"># in theme directory(source/images): /images/avatar.gif</span></div><div class="line"><span class="comment"># in site  directory(source/uploads): /uploads/avatar.gif</span></div><div class="line"><span class="attr">avatar:</span> <span class="string">/images/avatar.jpg</span></div></pre></td></tr></table></figure></p>
-<p>将avatar: 后面的东西改为/images/图片名.后缀名即可</p>
-<h4>将博主头像设置为圆形并且鼠标滑过时旋转</h4>
-<p>找到\themes\next\source\css_common\components\sidebar\sidebar-author.styl</p>
-<h5>头像设置为圆形</h5>
-<p>在刚才打开的文件里添加如下代码
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.site-author-image</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">  <span class="attribute">padding</span>: $site-author-image-padding;</div><div class="line">  <span class="attribute">max-width</span>: $site-author-image-width;</div><div class="line">  <span class="attribute">height</span>: $site-author-image-height;</div><div class="line">  <span class="attribute">border</span>: $site-author-image-border-width solid $site-author-image-border-color;</div><div class="line"></div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">80px</span>;</div><div class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">80px</span>;</div><div class="line">  <span class="attribute">-moz-border-radius</span>: <span class="number">80px</span>;</div><div class="line">  <span class="attribute">box-shadow</span>: inset <span class="number">0</span> -<span class="number">1px</span> <span class="number">0</span> <span class="number">#333</span>sf;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h5>头像设置为鼠标划过时旋转</h5>
-<p>在刚才的代码中的花括号内添加
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-transition</span>: <span class="selector-tag">-webkit-transform</span> 1<span class="selector-class">.0s</span> <span class="selector-tag">ease-out</span>;</div><div class="line"><span class="selector-tag">-moz-transition</span>: <span class="selector-tag">-moz-transform</span> 1<span class="selector-class">.0s</span> <span class="selector-tag">ease-out</span>;</div><div class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">transform</span> 1<span class="selector-class">.0s</span> <span class="selector-tag">ease-out</span>;</div></pre></td></tr></table></figure></p>
-<p>在花括号之后再添加
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="comment">/* 鼠标经过停止头像旋转 </span></div><div class="line"><span class="comment">  -webkit-animation-play-state:paused;</span></div><div class="line"><span class="comment">  animation-play-state:paused;*/</span></div><div class="line"></div><div class="line">  <span class="comment">/* 鼠标经过头像旋转360度 */</span></div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">rotateZ</span>(360deg);</div><div class="line">  <span class="attribute">-moz-transform</span>: <span class="built_in">rotateZ</span>(360deg);</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(360deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* Z 轴旋转动画 */</span></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> play &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">rotateZ</span>(0deg);</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">rotateZ</span>(-360deg);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@-<span class="keyword">moz</span>-<span class="keyword">keyframes</span> play &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">-moz-transform</span>: <span class="built_in">rotateZ</span>(0deg);</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">-moz-transform</span>: <span class="built_in">rotateZ</span>(-360deg);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> play &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(0deg);</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(-360deg);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>保存后运行即可.
-完成示例(突然发现不会做动图):<img src="/posts/15569/头像设置.png" alt="头像设置.png" title=""></p>
-<h3>侧栏中超链接的设置</h3>
-<p>在主题下的_config.yml文件中找到
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Blog rolls</span></div><div class="line"><span class="attr">links_icon:</span> <span class="string">link</span></div><div class="line"><span class="attr">links_title:</span> <span class="string">Links</span></div><div class="line"><span class="comment">#links_layout: block</span></div><div class="line"><span class="comment">#links_layout: inline</span></div><div class="line"><span class="attr">links:</span></div></pre></td></tr></table></figure></p>
-<p>在
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">links:</span></div></pre></td></tr></table></figure></p>
-<p>的下方加入你想要的超链接,例如:
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">links:</span></div><div class="line">  <span class="string">百度哇:</span> <span class="attr">http://baidu.com/</span></div><div class="line">  <span class="string">谷歌哇:</span> <span class="attr">http://google.com/</span></div></pre></td></tr></table></figure></p>
-<p>完成示例:<img src="/posts/15569/超链接设置.png" alt="超链接设置.png" title=""></p>
-<h3>动态背景的设置</h3>
-<p>从5.0.0版本开始,next主题就已经集成了动态背景的设置,所以并不需要去像网上一样那么麻烦,
-我们只需在_config.yml里找到:
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Canvas-nest</span></div><div class="line"><span class="attr">canvas_nest:</span> <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment"># three_waves</span></div><div class="line"><span class="attr">three_waves:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># canvas_lines</span></div><div class="line"><span class="attr">canvas_lines:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># canvas_sphere</span></div><div class="line"><span class="attr">canvas_sphere:</span> <span class="literal">false</span></div></pre></td></tr></table></figure></p>
-<p>将你想要的动态背景设为<strong>true</strong>即可.
-网上的方法有一个好,就是可以设置动态背景的详细数据.尝试过直接更改对应的.js文件(似乎是用java编码的?)但失败了.
-但我只找到nest风格的动态背景的设置.
-附上我找到的一篇<a href="http://www.jianshu.com/p/ea3990fe76f6" target="_blank" rel="external">文章</a>
-*注意:*由于新版的next主题的配置文件中已有动态背景的相关设置,故只用将_config.yml里对应的canvas风格设为true.</p>
-<h2>博客文件夹下的_config.yml的设置</h2>
-<h3>标题栏的设置</h3>
-<p>在_config.yml中找到:
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Site</span></div><div class="line"><span class="attr">title:</span> </div><div class="line"><span class="attr">subtitle:</span> </div><div class="line"><span class="attr">description:</span> </div><div class="line"><span class="attr">author:</span> </div><div class="line"><span class="attr">language:</span> <span class="string">zh-Hans</span></div><div class="line"><span class="attr">timezone:</span></div></pre></td></tr></table></figure></p>
-<p>将各项设置改成你想要的即可.其中language一项是改成简体中文,如果不填默认英文.</p>
-<p><strong>主要在_config.yml中进行的更改就讲解到这里,但是接下来的部分设置也会用到它</strong></p>
-<h1>对博客主页和文章的设置</h1>
-<p>&lt;font size=5&gt;&lt;center&gt;<strong>同样建议先备份</strong>&lt;/center&gt;&lt;/font&gt;</p>
-<h2>背景图片的设置</h2>
-<p>一张好的背景图片可以大大美化整个博客,而且这是一个比较简单的操作,第一步我们就先给博客设置一张背景图片吧.
-首先挑选一张你想要的图片,将它放入/themes/next/source/images
-并改名为background.jpg(方便操作,后缀名不能直接改要进行转化,具体百度XXX转jpg)
-用笔记本/其它编译器打开themes/next/source/css/_custom/custom.styl,
-在最后加入如下代码:
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">body &#123; background:url(/images/background.jpg);&#125;</div></pre></td></tr></table></figure></p>
-<p>别忘了选择UTF-8编码保存.
-(PS:背景图加载真的慢,我一张2.7m的受兔都要加载好一会)</p>
-<h3>设置背景图片不动</h3>
-<p>设好了背景图片后有人会发现当上拉下拉博客界面时,背景图片会跟着动,比较难看
-其实只要在刚才改动的custom.styl中,把加入的代码改成:
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> body &#123; background:url(/images/background.jpg);</div><div class="line">background-attachment: fixed;&#125;</div></pre></td></tr></table></figure></p>
-<p>就好了.</p>
-<p>##在博客右上角或左上角加一个&quot;fork me on GitHub&quot;的缎带</p>
-<p>在<a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="external">这个网站</a> 挑选一个你喜欢的样式,复制对应的代码
-然后打开themes/next/layout/_layout.swig ,找到
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">&lt;div</span> <span class="string">class="&#123;&#123;</span> <span class="string">container_class</span> <span class="string">&#125;&#125;</span> <span class="string">&#123;%</span> <span class="string">block</span> <span class="string">page_class</span> <span class="string">%&#125;&#123;%</span> <span class="string">endblock</span> <span class="string">%&#125;"&gt;</span></div><div class="line">    <span class="string">&lt;div</span> <span class="string">class="headband"&gt;&lt;/div&gt;</span></div><div class="line">     <span class="string">在这行插入复制的代码</span></div><div class="line">    <span class="string">&lt;header</span> <span class="string">id="header"</span> <span class="string">class="header"</span> <span class="string">itemscope</span> <span class="string">itemtype="http://schema.org/WPHeader"&gt;</span></div><div class="line">      <span class="string">&lt;div</span> <span class="string">class="header-inner"&gt;</span> <span class="string">&#123;%-</span> <span class="string">include</span> <span class="string">'_partials/header.swig'</span> <span class="string">%&#125;</span> <span class="string">&lt;/div&gt;</span></div><div class="line">    <span class="string">&lt;/header&gt;</span></div></pre></td></tr></table></figure></p>
-<p>插入复制的代码,将&quot;herf=&quot;后面的网址改成你的GitHub地址,完成.
-完成示例:<img src="/posts/15569/ribbon.png" alt="ribbon.png" title=""></p>
-<h2>博客底部的各种设置</h2>
-<h3>博客访客数的统计</h3>
-<p>找到\themes\next\layout_partials\footer.swig,在第一行
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"copyright"</span>&gt;</span>&#123;#</div></pre></td></tr></table></figure></p>
-<p>前加入
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>然后在
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  &#123;% if theme.post_wordcount.totalcount %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-area-chart"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    &#123;% if theme.post_wordcount.item_text %&#125;</div><div class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-text"</span>&gt;</span>&#123;&#123; __('post.totalcount') &#125;&#125;&amp;#58;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    &#123;% endif %&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">title</span>=<span class="string">"&#123;&#123; __('post.totalcount') &#125;&#125;"</span>&gt;</span>&#123;#</div><div class="line">    #&#125;&#123;&#123; totalcount(site, '0,0.0a') &#125;&#125;&#123;#</div><div class="line">  #&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">  &#123;% endif %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>这段语句之后加入
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-user-md"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span></div><div class="line">  本站访问数: <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 次</div><div class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>即可.访客统计有两种方式,一种是统计总访问次数,同一个ip多次访问可多次计数,即上面的代码.
-另一种是同一个ip多次访问只记一次,只需将
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">本站访问数: <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 次</div></pre></td></tr></table></figure></p>
-<p>改成
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">本站访问数: <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 次</div></pre></td></tr></table></figure></p>
-<p>即可.</p>
-<h3>加上博客总字数统计</h3>
-<p>首先在博客目录下的git bash或cmd中运行这行代码来安装字数统计插件
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-wordcount --save</div></pre></td></tr></table></figure></p>
-<p>然后在刚才修改的文件中,在刚才插入代码的地方再加入
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span>博客全站共&#123;&#123; totalcount(site) &#125;&#125;字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>即可.要注意访问数统计和博客字数统计在该文件中的位置会影响它们在博客中的位置.</p>
-<h3>隐藏底部的&quot;power by&quot;和&quot;强力驱动&quot;</h3>
-<p>在刚刚修改的文件中找到
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;% if theme.footer.powered %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"powered-by"</span>&gt;</span>&#123;#</div><div class="line">  #&#125;&#123;&#123; __('footer.powered', '<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"theme-link"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"https://hexo.io"</span>&gt;</span>Hexo<span class="tag">&lt;/<span class="name">a</span>&gt;</span>') &#125;&#125;&#123;#</div><div class="line">#&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% if theme.footer.powered and theme.footer.theme.enable %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div><div class="line"></div><div class="line">&#123;% if theme.footer.theme.enable %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"theme-info"</span>&gt;</span>&#123;#</div><div class="line">  #&#125;&#123;&#123; __('footer.theme') &#125;&#125; &amp;mdash; &#123;#</div><div class="line">  #&#125;<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"theme-link"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">href</span>=<span class="string">"https://github.com/iissnan/hexo-theme-next"</span>&gt;</span>&#123;#</div><div class="line">    #&#125;NexT.&#123;&#123; theme.scheme &#125;&#125;&#123;#</div><div class="line">  #&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; theme.version &#125;&#125;&#123;% endif %&#125;&#123;#</div><div class="line">#&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
-<p>在两端分别加上隐藏符&lt;!--[空格]和[空格]--&gt;来隐藏,或者直接删除.
-也可以选择只隐藏某部分,只需把&quot;--&gt;&quot;换到某个endif后.
-完成示例:<img src="/posts/15569/底部设置.png" alt="底部设置.png" title=""></p>
-<h2>对文章界面的设置</h2>
-<h3>给文章底部加上阴影效果</h3>
-<p>打开\themes\next\source\css_custom\custom.styl ,向里面加入(别在花括号里加):
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.post &#123;</div><div class="line">   margin-top: 60px;</div><div class="line">   margin-bottom: 60px;</div><div class="line">   padding: 25px;</div><div class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</div><div class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<p>通过修改
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">margin-top: 60px;</div><div class="line">margin-bottom: 60px;</div><div class="line">padding: 25px;</div></pre></td></tr></table></figure></p>
-<p>可以调整阴影效果和文章界面的大小</p>
-<h3>调整文章背景的不透明度</h3>
-<p>在刚才加的代码的大括号里再加入:
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opacity: 0.5;</div></pre></td></tr></table></figure></p>
-<p>可以手动调整文章背景的不透明度,不加这句默认为1,范围为0~1.
-目前仅在Gemini主题方案测试成功.
-(为了调这个我查了无数资料都没找到..百度都要被我翻光了QAQ后来自己试出来了..)</p>
-<h4>调整博客头栏的不透明度</h4>
-<p>类比刚才调整文章背景的各种设置,在刚才修改的文件里再加入</p>
-<p><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.header</span> &#123;<span class="attribute">opacity</span>:<span class="number">0.9</span>;&#125;</div></pre></td></tr></table></figure></p>
-<p>即可调整博客头栏的不透明度
-按理说再往header的花括号里再加入
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background:url(/images/background.jpg</div></pre></td></tr></table></figure></p>
-<p>还可更换头栏的背景图片,以及添加color语句来更换颜色,大家可自行尝试
-完成示例(0.9的不透明度不太明显):
-<img src="/posts/15569/更改头栏的不透明度.png" alt="更改头栏的不透明度.png" title=""></p>
-<h3>在每篇文章后加上&quot;本文结束&quot;字样</h3>
-<p>打开\themes\next\layout_macro文件夹,在里面创建一个记事本,输入
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    &#123;% if not is_index %&#125;</div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span>-------------本文结束<span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-paw"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span>感谢您的阅读-------------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    &#123;% endif %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>并保存为UTF-8编码,名字改为passage-end-tag,后缀名改为.swig
-然后打开同一个文件夹下的post.swig文件,
-找到
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-body&#123;% if theme.han %&#125; han-init-context&#123;% endif %&#125;&#123;% if post.direction &amp;&amp; post.direction.toLowerCase() === 'rtl' %&#125; rtl&#123;% endif %&#125;"</span> <span class="attr">itemprop</span>=<span class="string">"articleBody"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>在这句之后添加
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  &#123;% if not is_index %&#125;</div><div class="line">    &#123;% include 'passage-end-tag.swig' %&#125;</div><div class="line">  &#123;% endif %&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>完成示例:<img src="/posts/15569/本文结束.png" alt="本文结束.png" title=""></p>
-<h3>在文章标题下方添加统计功能</h3>
-<p>如果前面已经完成了博客字数统计,请跳过安装插件步骤(重复安也没什么事)
-在博客目录下的cmd或者git bash上运行
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-wordcount --save</div></pre></td></tr></table></figure></p>
-<p>来安装wordcount插件.
-然后在主题的配置文件中,找到
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Post wordcount display settings</span></div><div class="line"><span class="comment"># Dependencies: https://github.com/willin/hexo-wordcount</span></div><div class="line"><span class="attr">post_wordcount:</span></div><div class="line"><span class="attr">  item_text:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  wordcount:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  min2read:</span> <span class="literal">true</span></div></pre></td></tr></table></figure></p>
-<p>将你想要的项设为true即可.
-完成示例:<img src="/posts/15569/统计功能.png" alt="统计功能.png" title=""></p>
-<h2>对文章内容的设置</h2>
-<h3>文章插入图片</h3>
-<p>(这个功能真的困扰了我好久,不知道是我的电脑的原因还是我操作上的问题,
-只要我安装了文章中插入图片的插件,生成新文章后当天的index上并不会添加我新生成的文章
-这样就会导致文章无法阅读,我还曾一度怀疑我的博客死掉了QAQ
-解决了文章无法阅读的问题后,在.md文件里用markdown语法插入图片却并不管用..
-还好机智的我最终找到了解决方法(理直气壮.jpg))</p>
-<p>首先安装插件
-在博客目录下的cmd或者git bash上运行
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</div></pre></td></tr></table></figure></p>
-<p>然后在博客的配置文件中找到
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Writing</span></div><div class="line"><span class="string">...省略...</span></div><div class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></div></pre></td></tr></table></figure></p>
-<p>将该项设为 true
-接着bash如下语句
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"textname"</span></div></pre></td></tr></table></figure></p>
-<p>来生成一篇新的博文
-打开\source_posts文件夹,确认hexo除了生成了对应的.md文件以外还生成了一个与.md文件同名的文件夹
-在新生成的文件夹中放入你想要的图片,然后打开对应的.md文件
-用如下语句来引入图片
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;%asset_img 图片名.后缀名 %&#125;</div></pre></td></tr></table></figure></p>
-<p>完成示例:<img src="/posts/15569/插入图片.jpg" alt="插入图片.jpg" title=""></p>
-<h3>修改文章内链接文本的样式</h3>
-<p>找到themes\next\source\css_common\components\post\post.styl ,在末尾加入
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 文章内链接文本样式</div><div class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> <span class="selector-tag">a</span>&#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#0593d3</span>;</div><div class="line">  <span class="attribute">border-bottom</span>: none;</div><div class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#0593d3</span>;</div><div class="line">  &amp;:hover &#123;</div><div class="line">    <span class="selector-tag">color</span>: <span class="selector-id">#fc6423</span>;</div><div class="line">    <span class="selector-tag">border-bottom</span>: <span class="selector-tag">none</span>;</div><div class="line">    <span class="selector-tag">border-bottom</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#fc6423</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>并用<a href="https://yusi123.com/1090.html" target="_blank" rel="external">16进制颜色代码</a>来替换成你想要的颜色</p>
-<h3>文章加密功能</h3>
-<p>打开D:\hexo\themes\next\layout_partials文件夹下的head.swig文件,找到
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;% if page.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; page.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif page.tags and page.tags.length %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;% for tag in page.tags %&#125;&#123;&#123; tag.name &#125;&#125;,&#123;% endfor %&#125;"</span> /&gt;</span></div><div class="line">&#123;% elif theme.keywords %&#125;</div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"&#123;&#123; theme.keywords &#125;&#125;"</span> /&gt;</span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure></p>
-<p>在其下方插入如下代码:
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    (function()&#123;</span></div><div class="line"><span class="undefined">        if('&#123;&#123; page.password &#125;&#125;')&#123;</span></div><div class="line"><span class="undefined">            if (prompt('请输入文章密码') !== '&#123;&#123; page.password &#125;&#125;')&#123;</span></div><div class="line"><span class="undefined">                alert('密码错误！');</span></div><div class="line"><span class="undefined">                history.back();</span></div><div class="line"><span class="undefined">            &#125;</span></div><div class="line"><span class="undefined">        &#125;</span></div><div class="line"><span class="undefined">    &#125;)();</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>完成后应当是这样的(有绿色标记的是插入的代码):
-<img src="/posts/15569/wzjmcrdm.png" alt="wzjmcrdm.png" title="">
-然后在对应的文章中的.md文件中写成这样:
-<img src="/posts/15569/wzjmyl.png" alt="wzjmyl.png" title="">
-如果没有password一行就是不用密码,任何人可以访问.</p>
-<p>完成效果:
-<img src="/posts/15569/wzjmxg.png" alt="wzjmxg.png" title=""></p>
-<h3>文章置顶以及在主页的排版顺序</h3>
-<p>找到node_modules/hexo-generator-index/lib/generator.js(推荐使用vscode打开,或者其它编辑器,总之最好不要用记事本),将里面的代码改为:
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="keyword">var</span> pagination = <span class="built_in">require</span>(<span class="string">'hexo-pagination'</span>);</div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> config = <span class="keyword">this</span>.config;</div><div class="line">  <span class="keyword">var</span> posts = locals.posts;</div><div class="line">    posts.data = posts.data.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; <span class="comment">// 两篇文章top都有定义</span></div><div class="line">            <span class="keyword">if</span>(a.top == b.top) <span class="keyword">return</span> b.date - a.date; <span class="comment">// 若top值一样则按照文章日期降序排</span></div><div class="line">            <span class="keyword">else</span> <span class="keyword">return</span> b.top - a.top; <span class="comment">// 否则按照top值降序排</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span></div><div class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.date - a.date; <span class="comment">// 都没定义按照文章日期降序排</span></div><div class="line">    &#125;);</div><div class="line">  <span class="keyword">var</span> paginationDir = config.pagination_dir || <span class="string">'page'</span>;</div><div class="line">  <span class="keyword">return</span> pagination(<span class="string">''</span>, posts, &#123;</div><div class="line">    perPage: config.index_generator.per_page,</div><div class="line">    layout: [<span class="string">'index'</span>, <span class="string">'archive'</span>],</div><div class="line">    format: paginationDir + <span class="string">'/%d/'</span>,</div><div class="line">    data: &#123;</div><div class="line">      __index: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>然后在文章的.md文件中添加top值:
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line"></div><div class="line">title: '基于next主题的各种配置方法'</div><div class="line"></div><div class="line">date: 2017-10-27 16:22:00</div><div class="line"></div><div class="line">tags:</div><div class="line"></div><div class="line">categories: 博客美化</div><div class="line">top: 60</div><div class="line">---</div></pre></td></tr></table></figure></p>
-<p>top值范围为0-100,top值越大越靠前.</p>
-<h2>重设文章的url</h2>
-<p>此功能主要是为了文章url的唯一化,即不会因自动生成的文章url相同而导致的各种奇奇怪怪的bug.
-自动生成的url是/日期/undefined-title,极大可能导致重名,所以对于一个不摸鱼的博主,这是必须设置的.</p>
-<p>首先安装这个插件:
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-abbrlink --save</div></pre></td></tr></table></figure></p>
-<p>然后打开站点配置文件_config.yml,在其中找到&quot;permalink&quot;,将其改为:
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">permalink:</span> <span class="string">posts/:abbrlink/</span>  <span class="comment"># “posts/” 可自行更换</span></div></pre></td></tr></table></figure></p>
-<p>然后在最后添加如下代码:
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># abbrlink config</span></div><div class="line"><span class="attr">abbrlink:</span></div><div class="line"><span class="attr">  alg:</span> <span class="string">crc32</span>  <span class="comment"># 算法：crc16(default) and crc32</span></div><div class="line"><span class="attr">  rep:</span> <span class="string">hex</span>    <span class="comment"># 进制：dec(default) and hex</span></div></pre></td></tr></table></figure></p>
-<p>保存后hexo clean即可.
-由于此插件会在文章的.md文件中自动添加一行&quot;abbrlink: xxxxx&quot;,会导致文章的空白符编码发生改变,导致使用记事本时换行和空格不会显示,使文章挤成一坨.但是使用如VScode等编辑器打开.md文件就不会有这种问题了.</p>
-<p>参考资料:
-https://segmentfault.com/a/1190000009544924#articleHeader0
-http://muyunyun.cn/posts/f55182c5/#more</p>
-
-          
+          <p>经过两天的不懈努力,翻了无数篇文章,加上各路大神的支持,我的博客总算是初步配置好了QAQ<br>不知道是什么原因,网上的方法有一半是在我这行不通的..很多都是靠我自己摸索出来的(不会html,css,java真是苦逼)<br>所以作为我的第一篇正式博文,我将介绍一下各种博客美化的设置方法,供大家学习参考.<br>如有遗漏/错误/疑问,欢迎在我的QQ(344750681)向我提出.<br>当然我也有一些想要弄的却没弄出来的操作,待我学会后会补上.</p>
+<p>2017.11.08更新:文章置顶以及在主页的排版顺序<br>2017.11.11光棍节更新:重设文章的url<br><img src="/posts/15569/zhenlou.jpg" alt="zhenlou.jpg" title=""><br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/15569/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -888,8 +666,7 @@ http://muyunyun.cn/posts/f55182c5/#more</p>
       
         
           
-            <p>Use this to submit:
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure></p>
+            <p>Use this to submit:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</div></pre></td></tr></table></figure></p>
 
           
         
@@ -1068,7 +845,7 @@ http://muyunyun.cn/posts/f55182c5/#more</p>
       
         
           
-            <p><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"hello world"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//example for code upload</span></div></pre></td></tr></table></figure></p>
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"hello world"</span>&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//example for code upload</span></div></pre></td></tr></table></figure>
 <p>恶魔妹妹没咪咪</p>
 
           
@@ -1249,18 +1026,13 @@ http://muyunyun.cn/posts/f55182c5/#more</p>
         
           
             <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2>Quick Start</h2>
-<h3>Create a new post</h3>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3>Run server</h3>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3>Generate static files</h3>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3>Deploy to remote sites</h3>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
           
@@ -1474,7 +1246,7 @@ http://muyunyun.cn/posts/f55182c5/#more</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.3k字</span>
+  <span class="post-count">博客全站共35.0k字</span>
 </div>
 
 <!-- 
