@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://elatisy.top/"/>
-  <updated>2018-01-31T11:26:32.326Z</updated>
+  <updated>2018-02-19T07:19:55.788Z</updated>
   <id>http://elatisy.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>c++重载运算符到底有什么用?</title>
+    <link href="http://elatisy.top/posts/f287bd3c/"/>
+    <id>http://elatisy.top/posts/f287bd3c/</id>
+    <published>2018-02-19T07:18:47.000Z</published>
+    <updated>2018-02-19T07:19:55.788Z</updated>
+    
+    <content type="html"><![CDATA[<p>又开一个坑!<br>讲讲我最近做题时使用运算符重载的一些感受</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;又开一个坑!&lt;br&gt;讲讲我最近做题时使用运算符重载的一些感受&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>尝试用c++程序帮我覆写Pio的动作文件</title>
@@ -243,16 +267,16 @@
     
     </summary>
     
-      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
-    
       <category term="模板" scheme="http://elatisy.top/categories/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="c++" scheme="http://elatisy.top/categories/c/"/>
     
       <category term="Java" scheme="http://elatisy.top/categories/Java/"/>
     
     
-      <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="算法模板" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="算法" scheme="http://elatisy.top/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -419,32 +443,6 @@
     
     
       <category term="作业题解" scheme="http://elatisy.top/tags/%E4%BD%9C%E4%B8%9A%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown的使用方法</title>
-    <link href="http://elatisy.top/posts/12937/"/>
-    <id>http://elatisy.top/posts/12937/</id>
-    <published>2017-10-28T12:25:43.000Z</published>
-    <updated>2017-11-11T02:10:00.355Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="5"><center><strong>除特殊说明,本文的所有代码默认在文章所对应的.md文件中使用</strong></center></font></p><h1 id="插入图片的方法-在source-posts的对应文件夹内放入图片"><a href="#插入图片的方法-在source-posts的对应文件夹内放入图片" class="headerlink" title="插入图片的方法:在source_posts的对应文件夹内放入图片"></a>插入图片的方法:在source_posts的对应文件夹内放入图片</h1><p>使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;%asset_img imagename.imagetype%&#125;</div></pre></td></tr></table></figure></p><h1 id="转义符的使用"><a href="#转义符的使用" class="headerlink" title="转义符的使用"></a>转义符的使用</h1><p>当想要让某些符合html/markdown语法的语句呈文本输出(或是输出特殊字符)<br>可在想要文本输出的语句中适当位置或是特殊字符前添加转义符”\”</p><h1 id="插入数学符号-公式"><a href="#插入数学符号-公式" class="headerlink" title="插入数学符号/公式"></a>插入数学符号/公式</h1><p>markdown中可以使用LaTeX语法来插入一个数学公式<br><a href="http://blog.csdn.net/fzch_struggling/article/details/44998901" target="_blank" rel="external">具体看这里</a><br>我会慢慢把它全部搬过来的qwq(新的卫星?)</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;font size=&quot;5&quot;&gt;&lt;center&gt;&lt;strong&gt;除特殊说明,本文的所有代码默认在文章所对应的.md文件中使用&lt;/strong&gt;&lt;/center&gt;&lt;/font&gt;&lt;/p&gt;
-&lt;h1 id=&quot;插入图片的方法-在source-posts的对应文件夹内放入图片&quot;&gt;&lt;a h
-      
-    
-    </summary>
-    
-      <category term="markdown" scheme="http://elatisy.top/categories/markdown/"/>
-    
-    
-      <category term="伪代码" scheme="http://elatisy.top/tags/%E4%BC%AA%E4%BB%A3%E7%A0%81/"/>
     
   </entry>
   
